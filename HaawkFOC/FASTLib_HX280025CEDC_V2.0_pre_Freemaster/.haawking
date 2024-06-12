@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?fileVersion 4.0.0?><haawking version="2.1.5">
+	<device-macro>HXS320F280025C_EDC</device-macro>
+
+	<chip-model>HXS320F280025</chip-model>
+
+	<full-chip-model>DSC280025</full-chip-model>
+
+	<openocd-command-prefix>hxs320f280025c_edc</openocd-command-prefix>
+
+	<hardware-breakpoint-count>2</hardware-breakpoint-count>
+
+	<architecture>RISC-V</architecture>
+
+	<instruction-set>imc</instruction-set>
+
+	<storage-endian>little</storage-endian>
+
+	<password-group>2</password-group>
+
+	<debug-restart>
+		<write-str>
+			<command>monitor reset init</command>
+			<command>monitor reset init</command>
+			<command>monitor hx_unlock 0</command>
+			<command>monitor reg pc $program_start_addr</command>
+			<command>monitor mww 0Xdc40 0X68</command>
+		</write-str>
+	</debug-restart>
+
+	<flashStart>0x600000</flashStart>
+	<flashEnd>0x640000</flashEnd>
+	<otpStart>0x7a0000</otpStart>
+	<flashDownloadCommandPrefix>hx_write 0</flashDownloadCommandPrefix>
+</haawking>
