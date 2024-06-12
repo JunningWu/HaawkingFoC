@@ -39,4 +39,10 @@ HaawkingDriveMaster是针对与HaawkingSmartControl控制板推出的配套驱�
 
 HaawkFAST算法可在2分钟内实现电机参数的高精度估算，角度估算可在启动的第一个电周期内快速收敛，可以实现四象限稳定运行，可以实现低速下正反转的平滑切换，即使在停止转动下仍然保持角度的完整性，从而实现平滑的启动恢复，较好的低速性能，可实现零转速启动且低于1HZ运行，可以实现电机在线电阻辨识提升角度估算的准确性，HaawkFAST可替代机械编码器，加快控制系统的设计。
 
+### F280025C Launchboard SINGLE Motor Control
+FreeMaster是一种用户友好的实时调试监测器和数据可视化工具，可用于运行时配置和调试嵌入式软件应用；支持对正在运行的系统上的变量进行非侵入式监测，并且可以在示波器式显示器上以标准小部件(仪表、滑块等)或文本形式的数据形式显示多个变量，从而提供易于使用的数据记录器。
+![FASTLib_HX280025C_DSC5.1_SINGLE_MOTOR](https://github.com/JunningWu/HaawkingFoC/blob/3ea2a055c00bb97fd58ff4b1efb54ba10a6c0d03/HaawkFOC/FASTLib_HX280025C_DSC5.1_SINGLE_MOTOR.jpg)
+![FASTLib_HX280025C_DSC5.1_SINGLE_MOTOR_Freemaster](https://github.com/JunningWu/HaawkingFoC/blob/3ea2a055c00bb97fd58ff4b1efb54ba10a6c0d03/HaawkFOC/FASTLib_HX280025C_DSC5.1_SINGLE_MOTOR_Freemaster.jpg)
 
+### F280025C Launchboard DUAL Motor Control
+![FASTLib_HX280025C_DSC5.1_DUAL_MOTOR](https://github.com/JunningWu/HaawkingFoC/blob/3ea2a055c00bb97fd58ff4b1efb54ba10a6c0d03/HaawkFOC/FASTLib_HX280025C_DSC5.1_DUAL_MOTOR.jpg)
