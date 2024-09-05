@@ -274,11 +274,11 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 - 超小型完整无刷直流驱动级
 - 驱动级受到全面保护，包括短路、过热、击穿和欠压保护
 
-![实验一YuZhou_V1P3_驱动板](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一YuZhou_V1P3_驱动板.png)
+![实验一YuZhou_V1P3_驱动板](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验一YuZhou_V1P3_驱动板.png)
 
 双电机接线图，如下所示：
 
-![实验一YuZhou_V1P3_双电机接线图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一YuZhou_V1P3_双电机接线图.png)
+![实验一YuZhou_V1P3_双电机接线图](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验一YuZhou_V1P3_双电机接线图.png)
 
 
 
@@ -817,7 +817,7 @@ mainISR()函数是一个执行FOC循环的关键函数。实验室“HXS320F2800
 
 FOC（Field-Oriented Control，磁场定向控制）是一种用于交流电机（如永磁同步电机 PMSM 和感应电机）的高级控制策略。FOC 提供了一种方法，通过控制电机的电流矢量，使其在各种运行条件下实现高效运行和精确控制。电流闭环控制是 FOC 中的关键部分。
 
-![实验四-FOC算法电流闭环控制框图](C:\Users\Administrator\Downloads\实验四-FOC算法电流闭环控制框图.png)
+![实验四-FOC算法电流闭环控制框图](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验四-FOC算法电流闭环控制框图.png)
 
 FOC 电流闭环控制的基本步骤：
 
@@ -838,7 +838,7 @@ FOC 电流闭环控制的基本步骤：
 6. **电机运行**：
    - 电机根据施加的三相电压运行，产生相应的磁场和转矩。
 
-![实验四-FOC电流闭环数据流程图](C:\Users\Administrator\Downloads\实验四-FOC电流闭环数据流程图.jpg)
+![实验四-FOC电流闭环数据流程图](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验四-FOC电流闭环数据流程图.jpg)
 
 
 
@@ -853,17 +853,17 @@ adcData.V_V ： 12.xx V
 
 确认无误后，设置motorVars.flagRunIdentAndOnLine=1，电机应该可以转动，默认的转速为20Hz。
 
-![实验四-电机转动后电流波形图](C:\Users\Administrator\Downloads\实验四-电机转动后电流波形图.jpg)
+![实验四-电机转动后电流波形图](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验四-电机转动后电流波形图.jpg)
 
 可以通过调整motorVars.speedRef_krpm、motorVars.IdSet_A和motorVars.IqSet_A的值，让电机转动的更平稳。
 
 通过Freemaster，可以查看ADC采样得到的三相电流，如下图所示：
 
-![实验四-电机转动后电流波形图Freemaster](C:\Users\Administrator\Downloads\实验四-电机转动后电流波形图Freemaster.jpg)
+![实验四-电机转动后电流波形图Freemaster](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验四-电机转动后电流波形图Freemaster.jpg)
 
 同时，也可以查看Clark变换和Park变换前后的数据，如Id和Iq等，如下图所示：
 
-![实验四-电机转动后clark变换和IdIq-Freemaster](C:\Users\Administrator\Downloads\实验四-电机转动后clark变换和IdIq-Freemaster.jpg)
+![实验四-电机转动后clark变换和IdIq-Freemaster](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验四-电机转动后clark变换和IdIq-Freemaster.jpg)
 
 停止电机，首先需要设置motorVars.flagRunIdentAndOnLine=0，然后把电源的输出关闭，再点击Haawking IDE的停止调试按钮。
 
@@ -887,7 +887,7 @@ adcData.V_V ： 12.xx V
 
 HaawkFOC中的电机参数辨识功能基于中科昊芯开发的HaawkFAST（Flux, Angle, Speed and Torque）估算器，它是一种高效的感应电机和无刷直流电机（BLDC）控制算法。
 
-![实验五-FOC算法FAST估算器框图](C:\Users\Administrator\Downloads\实验五-FOC算法FAST估算器框图.png)
+![实验五-FOC算法FAST估算器框图](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-FOC算法FAST估算器框图.png)
 
 除了FAST估计器在芯片内部的ROM中之外，所有其他的FOC模块都可以从RAM/FLASH中执行，并且都是开源的。本实验“HXS320F280049C_EDC_is05_motor_id”将演示电机参数识别流程以及如何启动电机。
 
@@ -982,55 +982,55 @@ HaawkFOC使用的HaawkFAST估算器能够在没有物理传感器的情况下，
 
 如果三相电流和三相电压采样都符合预期，则使能motorVars.flagRunIdentAndOnLine，就开始进入参数辨识的过程了，整个参数辨识的状态转换如下图所示（这里只做简单概述，具体可参考《Haawking_HaawkFOC用户指南_V1.0》6.2.1 估算器(EST) 状态机章节）：
 
-![实验五-参数辨识流程图](C:\Users\Administrator\Downloads\实验五-参数辨识流程图.png)
+![实验五-参数辨识流程图](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-参数辨识流程图.png)
 
 ①EST_STATE_ROVERL
 
 估算器的 R/L 状态在电机识别过程期间执行，用于测量电机的电气常量。此状态结束时，可使用产生的 R/L 比来计算 ID 和 IQ 电流控制器增益。
 
-![实验五-EST_STATE_ROVERL](C:\Users\Administrator\Downloads\实验五-EST_STATE_ROVERL.png)
+![实验五-EST_STATE_ROVERL](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-EST_STATE_ROVERL.png)
 
 ②EST_STATE_RS
 
 首次识别电机定子电阻时或在完全识别电机后重新校准定子电阻时，估算器处于 Rs 状态。
 
-![实验五-EST_STATE_RS](C:\Users\Administrator\Downloads\实验五-EST_STATE_RS.png)
+![实验五-EST_STATE_RS](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-EST_STATE_RS.png)
 
 ③EST_STATE_RAMPUP
 
 在估算器斜升状态下，电机可上升至已配置的频率以执行其它识别任务，例如磁通和电感识别。在此状态期间，不会估算任何参数，仅仅使电机上升至特定频率。
 
-![实验五-EST_STATE_RAMPUP](C:\Users\Administrator\Downloads\实验五-EST_STATE_RAMPUP.png)
+![实验五-EST_STATE_RAMPUP](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-EST_STATE_RAMPUP.png)
 
 ④EST_STATE_CONSTSPEED + EST_STATE_RATEDFLUX
 
 在此状态期间，将识别电机定子到转子的磁链。
 
-![实验五-EST_STATE_CONSTSPEED+EST_STATE_RATEDFLUX](C:\Users\Administrator\Downloads\实验五-EST_STATE_CONSTSPEED+EST_STATE_RATEDFLUX.png)
+![实验五-EST_STATE_CONSTSPEED+EST_STATE_RATEDFLUX](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-EST_STATE_CONSTSPEED+EST_STATE_RATEDFLUX.png)
 
-![实验五-EST_STATE_CONSTSPEED+EST_STATE_RATEDFLUX-2](C:\Users\Administrator\Downloads\实验五-EST_STATE_CONSTSPEED+EST_STATE_RATEDFLUX-2.png)
+![实验五-EST_STATE_CONSTSPEED+EST_STATE_RATEDFLUX-2](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-EST_STATE_CONSTSPEED+EST_STATE_RATEDFLUX-2.png)
 
 ⑤EST_STATE_LS
 
 估算器的这一状态期间将识别定子电感。
 
-![实验五-EST_STATE_LS](C:\Users\Administrator\Downloads\实验五-EST_STATE_LS.png)
+![实验五-EST_STATE_LS](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-EST_STATE_LS.png)
 
 辨识完成后，会自动将motorVars.flagRunIdentAndOnLine清零，同时置位motorVars.flagMotorIdentified，辨识结果如下所示：
 
-![实验五-辨识完成1](C:\Users\Administrator\Downloads\实验五-辨识完成1.png)
+![实验五-辨识完成1](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-辨识完成1.png)
 
-![实验五-辨识完成2](C:\Users\Administrator\Downloads\实验五-辨识完成2.png)
+![实验五-辨识完成2](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-辨识完成2.png)
 
 48V-400W的电机参数如下：
 
-![实验五-辨识完成3](C:\Users\Administrator\Downloads\实验五-辨识完成3.png)
+![实验五-辨识完成3](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-辨识完成3.png)
 
 
 
 #### 2.5.6转M2电机
 
-![实验五-电机2接线图](C:\Users\Administrator\Downloads\实验五-电机2接线图.png)
+![实验五-电机2接线图](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-电机2接线图.png)
 
 需要修改的地方，涉及到ADC和PWM的初始化，主要是电压和电流采样部分的代码，其他上层的代码都可以用M1电机的。
 
@@ -1116,11 +1116,11 @@ obj->pwmHandle[2] = EPWM2_BASE;
 
 辨识后的参数如下所示，尽管是同一个电机(001#)，可以发现辨识出来的参数也是有些不一样的：
 
-![实验五-电机2识别完成后参数列表](C:\Users\Administrator\Downloads\实验五-电机2识别完成后参数列表.png)
+![实验五-电机2识别完成后参数列表](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-电机2识别完成后参数列表.png)
 
 另外一台电机的参数（003#），如下所示：
 
-![实验五-电机2识别完成后参数列表good](C:\Users\Administrator\Downloads\实验五-电机2识别完成后参数列表good.png)
+![实验五-电机2识别完成后参数列表good](https://github.com/JunningWu/HaawkingFoC/blob/c8c8622e44e18298fb44dec7845f32b0ddc7fc7c/YuZhou1.0/pics/实验五-电机2识别完成后参数列表good.png)
 
 
 
