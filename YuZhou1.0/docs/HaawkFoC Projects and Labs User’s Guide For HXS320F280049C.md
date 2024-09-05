@@ -150,11 +150,11 @@ HXS320F280049C是一款基于RISC-V 指令集架构的DSP芯片，主频最高16
 
 Launchboard提供了ADC、ePWM、SCI、eQEP、FSI等多种外设接口，另外LaunchBoard还带有板载的CAN 收发器，可以用来进行CAN 2.0B的评估和验证。板子引出了2个BoosterPack的兼容排针接口，可以连接多种类型的BoosterPack扩展板和接口兼容的驱动板，如YuZhou_V1.2驱动板。
 
-![实验硬件-DSC280049C_LaunchBoard](C:\Users\Administrator\Downloads\实验硬件-DSC280049C_LaunchBoard.jpg)
+![实验硬件-DSC280049C_LaunchBoard](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验硬件-DSC280049C_LaunchBoard.jpg)
 
 控制板和驱动板的链接图，如下所示：
 
-![实验硬件-控制板和驱动板连接图](C:\Users\Administrator\Downloads\实验硬件-控制板和驱动板连接图.jpg)
+![实验硬件-控制板和驱动板连接图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验硬件-控制板和驱动板连接图.jpg)
 
 因为DSC280049C的LaunchBoard支持不同的硬件，在与YuZhou_V1.2驱动板联合工作的时候，在硬件电路方面需要做调整（一些电阻需要去掉和焊接）：
 
@@ -258,11 +258,11 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 - 超小型完整无刷直流驱动级
 - 驱动级受到全面保护，包括短路、过热、击穿和欠压保护
 
-![实验硬件-YuZhou_V1.2驱动板](C:\Users\Administrator\Downloads\实验硬件-YuZhou_V1.2驱动板.jpg)
+![实验硬件-YuZhou_V1.2驱动板](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验硬件-YuZhou_V1.2驱动板.jpg)
 
 由于YuZhou_V1.2驱动板的尺寸问题，在进行双电机调试的时候，没办法直接接插到DSC280049C的LaunchBoard板上，需要加高一个驱动板，如下图所示：
 
-![实验十一-双电机控制接线图](C:\Users\Administrator\Downloads\实验十一-双电机控制接线图.png)
+![实验十一-双电机控制接线图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验十一-双电机控制接线图.png)
 
 #### 1.2.3 YuZhou_V1.3驱动板
 
@@ -274,11 +274,11 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 - 超小型完整无刷直流驱动级
 - 驱动级受到全面保护，包括短路、过热、击穿和欠压保护
 
-![实验一YuZhou_V1P3_驱动板](C:\Users\Administrator\Downloads\实验一YuZhou_V1P3_驱动板.png)
+![实验一YuZhou_V1P3_驱动板](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一YuZhou_V1P3_驱动板.png)
 
 双电机接线图，如下所示：
 
-![实验一YuZhou_V1P3_双电机接线图](C:\Users\Administrator\Downloads\实验一YuZhou_V1P3_双电机接线图.png)
+![实验一YuZhou_V1P3_双电机接线图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一YuZhou_V1P3_双电机接线图.png)
 
 
 
@@ -290,21 +290,21 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 
 实验用的电机是一款低压直流伺服电机，产品型号为ZLAC60ASM400。
 
-![ZLAC60ASM400-电机外观和尺寸图](C:\Users\Administrator\Downloads\ZLAC60ASM400-电机外观和尺寸图.png)
+![ZLAC60ASM400-电机外观和尺寸图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/ZLAC60ASM400-电机外观和尺寸图.png)
 
 
 
-![ZLAC60ASM400-电机电气参数表](C:\Users\Administrator\Downloads\ZLAC60ASM400-电机电气参数表.png)
+![ZLAC60ASM400-电机电气参数表](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/ZLAC60ASM400-电机电气参数表.png)
 
 
 
-![ZLAC60ASM400-电机接线定义](C:\Users\Administrator\Downloads\ZLAC60ASM400-电机接线定义.png)
+![ZLAC60ASM400-电机接线定义](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/ZLAC60ASM400-电机接线定义.png)
 
 ##### 1.2.3.2海立新能源压缩机
 
-![海立压缩机外观图](C:\Users\Administrator\Downloads\海立压缩机外观图.png)
+![海立压缩机外观图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/海立压缩机外观图.png)
 
-![海立压缩机参数](C:\Users\Administrator\Downloads\海立压缩机参数.png)
+![海立压缩机参数](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/海立压缩机参数.png)
 
 额定输入电压是24V;
 额定电流约6A;
@@ -314,7 +314,7 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 
 HaawkFAST估算出来的参数如下：
 
-![海立压缩机估算参数](C:\Users\Administrator\Downloads\海立压缩机估算参数.png)
+![海立压缩机估算参数](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/海立压缩机估算参数.png)
 
 
 
@@ -322,7 +322,7 @@ HaawkFAST估算出来的参数如下：
 
 电源则采用**wanptek可调直流稳压电源表**，可以输出120V-3A，满足实验的需求；实验中，一般选择24V就可以。
 
-![APS1203H-直流稳压电源](C:\Users\Administrator\Downloads\APS1203H-直流稳压电源.png)
+![APS1203H-直流稳压电源](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/APS1203H-直流稳压电源.png)
 
 
 
@@ -341,17 +341,17 @@ Scia_Config(115200);
 FMSTR_Init();
 ```
 
-![实验三-三相电流5Hz](C:\Users\Administrator\Downloads\实验三-三相电流5Hz.png)
+![实验三-三相电流5Hz](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验三-三相电流5Hz.png)
 
 ### 1.3实验资源
 
 为了更好的让学员参与到项目中，我们选择了将所有的硬件和软件进行开源，仓库地址在Github上面，仓库地址为：`https://github.com/JunningWu/HaawkingFoC/tree/main/YuZhou1.0`。
 
-![Github仓库代码结构](C:\Users\Administrator\Downloads\Github仓库代码结构.png)
+![Github仓库代码结构](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/Github仓库代码结构.png)
 
 如上图所示，docs文件夹会放一些实验相关的说明文档，hardware文件夹会放LaunchBoard和驱动板的原理图和PCB文件，software文件夹会存放相关工程的源文件（主要是Haawking IDE的工程代码），如下所示：
 
-![Github仓库software代码结构](C:\Users\Administrator\Downloads\Github仓库software代码结构.png)
+![Github仓库software代码结构](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/Github仓库software代码结构.png)
 
 
 
@@ -390,7 +390,7 @@ HAL，也就是Hardware Abstraction Layer的简称，也就是硬件抽象层，
 
 
 
-![实验一HAL库架构图](C:\Users\Administrator\Downloads\实验一HAL库架构图.png)
+![实验一HAL库架构图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一HAL库架构图.png)
 
 HAL库的定义和API接口函数，可以在hal_obj.h中找到；后续所有的实验都是基于本实验进行扩展的，所以强烈建议学习者以此为基础，再进行后续的开发。
 
@@ -488,23 +488,23 @@ HAL_enablePWM()
 
 整个工程的配置，都是调用HAL_obj的API接口函数，初始化的流程如下图所示
 
-![image-20240625172140333](C:\Users\Administrator\Downloads\实验一初始化流程图.png)
+![image-20240625172140333](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一初始化流程图.png)
 
 下图所示是电机控制的系统框图，
 
-![image-20240625173507766](C:\Users\Administrator\Downloads\实验一电机系统结构框图.png)
+![image-20240625173507766](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一电机系统结构框图.png)
 
 对于本实验以及后续的所有实验，代码的框架如下图所示。包括HXS320F280049C的驱动文件haawking-drivers，HaawkFoC相关的代码src_fast、src_foc、src_utilities等。本实验使用的硬件包括LaunchBoard_DSC280049C_V1.0控制板和YuZhou_V1.2驱动板。
 
-![实验一工程架构和代码](C:\Users\Administrator\Downloads\实验一工程架构和代码.png)
+![实验一工程架构和代码](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一工程架构和代码.png)
 
-![image-20240625175017353](C:\Users\Administrator\Downloads\实验一HaawkFoC代码.png)
+![image-20240625175017353](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一HaawkFoC代码.png)
 
 可以直接导入到Haawking IDE中进行查看本实验的源码（注：欢迎使用最新版的Haawking IDE，演示版本为Haawking IDE V2.2.11Pre）。
 
 如果不会使用Haawking IDE查看全局变量和函数定义，可以参考Haawking IDE根目录下的《Haawking-IDE User's Guide.pdf》文档。在本实验中，需要重点关注的全局变量为HAL_Handle和USER_Params。
 
-![实验一全局变量](C:\Users\Administrator\Downloads\实验一全局变量.png)
+![实验一全局变量](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一全局变量.png)
 
 #### 2.1.5调试步骤
 
@@ -512,17 +512,17 @@ HAL_enablePWM()
 
 本节涵盖了设置微控制器和HaawkFOC软件所需的核心功能。下表中仅列出了电机控制所必需的功能；一些功能虽然存在与工程中，但并未列出，这些功能是为了增强实验的功能，并不是设置驱动器所必需的。关于函数参数和返回值的更详细解释，请参阅《Haawking_HaawkFOC用户指南_V1.0.pdf》的电机控制部分。
 
-![实验一初始化核心函数介绍](C:\Users\Administrator\Downloads\实验一初始化核心函数介绍.png)
+![实验一初始化核心函数介绍](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一初始化核心函数介绍.png)
 
 **mainISR主中断**
 
 在mainISR()中断服务程序中运行的代码都是关键任务，很重要的一点就是要实时运行。在本实验中，mainISR()会闪烁LED灯、读取ADC结果寄存器值（三相电流、三相电压和母线电压）；同时，PWM寄存器的值也会通过调用HAL_writePWMData()来完成周期性更新。在初始化的时候，会通过向pwm寄存器中写入0来实现50%占空比的波形输出。
 
-![实验一mainISR代码](C:\Users\Administrator\Downloads\实验一mainISR代码.png)
+![实验一mainISR代码](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一mainISR代码.png)
 
 LED的闪烁频率为1Hz，通过counterLED变量的递增来控制，在本实验中，PWM的开关频率是15KHz，用来触发ADC中断，也就是mainISR的执行频率。LED灯由GPIO34控制，即LaunchBoard板上的LED202。
 
-![实验一mainISR代码LED](C:\Users\Administrator\Downloads\实验一mainISR代码LED.png)
+![实验一mainISR代码LED](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验一mainISR代码LED.png)
 
 将工程（HXS320F280049C_EDC_is01_intro_hal）导入到Haawking IDE中，链接LaunchBoard，下载程序，全速运行，应该可以看到LED202（绿色灯）闪烁，闪烁频率为1Hz。
 
