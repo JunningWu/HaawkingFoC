@@ -1153,7 +1153,7 @@ PI控制器（比例-积分控制器）是控制系统中常用的一种控制�
 
 PI控制器：PI控制器将比例控制和积分控制结合起来，使得系统既有快速响应能力又能消除稳态误差。
 
-![实验六-PI控制器框图](C:\Users\Administrator\Downloads\实验六-PI控制器框图.png)
+![实验六-PI控制器框图](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-PI控制器框图.png)
 
 调节PI控制器的参数主要涉及两个方面：
 
@@ -1212,37 +1212,37 @@ static inline void setupControllers(void)
 
 如下面的FOC控制框图所示，设置Id的参考值，通过HaawkFAST估算器获得反馈的Id，送入PI控制器中，经过iPark变换，驱动电机运行。
 
-![实验六-FOC控制框图](C:\Users\Administrator\Downloads\实验六-FOC控制框图.png)
+![实验六-FOC控制框图](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-FOC控制框图.png)
 
 此时，通过设置motorVars.speedRef_Hz已经不起作用，只能通过IdqSet_A.value[1]来修改Id的参考值，来调整输出的力矩和电机的转速。
 
 如果Id的参考值，小于某一个值，电机是无法运行的，例如本实验中，只有当Id参考值大于0.27，电机才可以勉强转起来，此时的电机转速为11Hz左右。
 
-![实验六-修改配置转速无法启动](C:\Users\Administrator\Downloads\实验六-修改配置转速无法启动.png)
+![实验六-修改配置转速无法启动](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-修改配置转速无法启动.png)
 
-![实验六-修改配置转速勉强启动](C:\Users\Administrator\Downloads\实验六-修改配置转速勉强启动.png)
+![实验六-修改配置转速勉强启动](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-修改配置转速勉强启动.png)
 
 当Id的参考值超过某一个数值的时候，电机的转速也不会上去了，这是因为程序中设置了输出上限，在本实验中，Id的参考值超过0.6以后，电机转速就达到了最高，203Hz左右。
 
-![实验六-修改配置转速203Hz-之二](C:\Users\Administrator\Downloads\实验六-修改配置转速203Hz-之二.png)
+![实验六-修改配置转速203Hz-之二](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-修改配置转速203Hz-之二.png)
 
-![实验六-修改配置转速203Hz](C:\Users\Administrator\Downloads\实验六-修改配置转速203Hz.png)
+![实验六-修改配置转速203Hz](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-修改配置转速203Hz.png)
 
-![实验六-默认的配置转速203Hz](C:\Users\Administrator\Downloads\实验六-默认的配置转速203Hz.png)
+![实验六-默认的配置转速203Hz](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-默认的配置转速203Hz.png)
 
 当Id参考值在0.27和0.6之间，可以通过调整Id的参考值，调整电机的转速，如下所示：
 
-![实验六-修改配置转速23Hz](C:\Users\Administrator\Downloads\实验六-修改配置转速23Hz.png)
+![实验六-修改配置转速23Hz](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-修改配置转速23Hz.png)
 
-![实验六-修改配置转速58Hz](C:\Users\Administrator\Downloads\实验六-修改配置转速58Hz.png)
+![实验六-修改配置转速58Hz](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-修改配置转速58Hz.png)
 
-![实验六-修改配置转速105Hz](C:\Users\Administrator\Downloads\实验六-修改配置转速105Hz.png)
+![实验六-修改配置转速105Hz](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-修改配置转速105Hz.png)
 
 也可以通过Freemaster查看力矩和转速，如下图所示：
 
-![实验六-Freemaster查看Nm和Speed](C:\Users\Administrator\Downloads\实验六-Freemaster查看Nm和Speed.png)
+![实验六-Freemaster查看Nm和Speed](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-Freemaster查看Nm和Speed.png)
 
-![实验六-Freemaster查看Nm和Speed-之二](C:\Users\Administrator\Downloads\实验六-Freemaster查看Nm和Speed-之二.png)
+![实验六-Freemaster查看Nm和Speed-之二](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验六-Freemaster查看Nm和Speed-之二.png)
 
 #### 2.6.6结论
 
@@ -1270,7 +1270,7 @@ HaawkSPIN的FOC方案提供了一个标准的PI速度控制器。HaawkSPIN库将
 
 很多时候，当你试图调整一个电机的参数时，惯量是不能立刻获得的。HaawkSPIN提供了使用一种非常简单但有效的技术，在不知道任何机械参数的情况下快速调整PI参数来让速度控制回路达到预期目标。在接下来的讨论中，HaawkSPIN使用“并行”PI控制器来进行速度控制回路，如下图所示。
 
-![实验七-并行PI控制器](C:\Users\Administrator\Downloads\实验七-并行PI控制器.png)
+![实验七-并行PI控制器](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验七-并行PI控制器.png)
 
 一般来说，增加Ki增益会加剧系统震荡。系统的阻尼则由Kp增益控制。例如，如果Kp增益设置得很低，Ki增益将起主要作用，电机控制系统将像弹簧一样工作，震动剧烈。当对系统施加阶跃负载时，它会振荡。增加阻尼（也就是Kp增益）则将减少振荡。
 
@@ -1278,7 +1278,7 @@ HaawkSPIN的FOC方案提供了一个标准的PI速度控制器。HaawkSPIN库将
 
 速度信号通常需要经过过滤后才能被用来控制系统。在本实验中，假设我们使用的是一种单极低通滤波器，`Vel_filter(s)=1/(τs+1)`，其中，`τs`为速度低通滤波器的时间常数（下图中的绿色块）。
 
-![实验七-速度环叠加电流环和速率滤波器](C:\Users\Administrator\Downloads\实验七-速度环叠加电流环和速率滤波器.png)
+![实验七-速度环叠加电流环和速率滤波器](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验七-速度环叠加电流环和速率滤波器.png)
 
 然后，电流闭环控制的传递函数为：
 
@@ -1414,23 +1414,23 @@ static inline void setupControllers(void)
 
 与2.6.5小节不同的是，设置速度Spd_ref的参考值，通过HaawkFAST估算器获得反馈的速度w，送入速度环的PI控制器中，经过电流环的PI控制器，驱动电机运行。
 
-![实验七-速度环FOC控制框图](C:\Users\Administrator\Downloads\实验七-速度环FOC控制框图.png)
+![实验七-速度环FOC控制框图](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验七-速度环FOC控制框图.png)
 
 调试的步骤跟前几个实验一样的，首先在实时刷新窗口中使能motorVars.flagEnableSys，全速运行；然后，查看ADC采样的三相电流和三相电压是否符合预期（adcData结构体，预期结果参考之前章节）。如果三相电流和三相电压采样都符合预期，则使能motorVars.flagRunIdentAndOnLine，电机以默认的速度运行。
 
 如下图所示，采用的默认的Kp和Ki值，电机在20Hz的时候运行效果图，反馈的电机转速，波动较大。
 
-![实验七-速度环FOC控制默认KpKi值](C:\Users\Administrator\Downloads\实验七-速度环FOC控制默认KpKi值.png)
+![实验七-速度环FOC控制默认KpKi值](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验七-速度环FOC控制默认KpKi值.png)
 
 如果将电机的速度提升到100Hz，则可以通过Freemaster查看反馈的电机转速如下变化：
 
-![实验七-速度环FOC控制默认KpKi值加速之一](C:\Users\Administrator\Downloads\实验七-速度环FOC控制默认KpKi值加速之一.png)
+![实验七-速度环FOC控制默认KpKi值加速之一](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验七-速度环FOC控制默认KpKi值加速之一.png)
 
 可以再将速度提升到150Hz和200Hz，观察到电机转速的误差随着速度的提升在变小。
 
-![实验七-速度环FOC控制150Hz](C:\Users\Administrator\Downloads\实验七-速度环FOC控制150Hz.png)
+![实验七-速度环FOC控制150Hz](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验七-速度环FOC控制150Hz.png)
 
-![实验七-速度环FOC控制200Hz](C:\Users\Administrator\Downloads\实验七-速度环FOC控制200Hz.png)
+![实验七-速度环FOC控制200Hz](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验七-速度环FOC控制200Hz.png)
 
 但是，在200Hz的时候，可以看到转速误差的曲线，呈现出正弦波的形状。
 
@@ -1450,11 +1450,11 @@ HaawkSPIN使用的SVM能够饱和到预先规定的占空比。当使用超过10
 
 在一个典型的三相逆变器中，测量电机电流的首选方法之一是使用低侧分流电阻，如下图所示。这提供了一个经济的解决方案，因为电流测量的参考与微控制器的GND相同。然而，它引入了一个限制，因为低侧分流电阻器只在低侧PWM接通时携带电流。
 
-![实验八-三相电机采样电阻示意图](C:\Users\Administrator\Downloads\实验八-三相电机采样电阻示意图.png)
+![实验八-三相电机采样电阻示意图](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-三相电机采样电阻示意图.png)
 
 此外，当用三相逆变器驱动电机时，希望施加到电机绕组的电压是全量程的，而不仅仅是正弦调制波形。这一要求将空间向量调制的性能推到了极限，并导致长时间的低侧PWM开启时间基本消失。下图显示了一个场景，PWM1L中的脉冲太窄，无法在A相上进行有效电流转换。
 
-![实验八-过调制场景下PWM波形示意图](C:\Users\Administrator\Downloads\实验八-过调制场景下PWM波形示意图.png)
+![实验八-过调制场景下PWM波形示意图](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-过调制场景下PWM波形示意图.png)
 
 本实验中使用的方法利用了电流重建技术和设置触发功能，即使逆变器产生这样的窄脉冲，也可以测量电流。如果我们至少可以测量两个相电流，就可以用公式`ia+ib+ic=0`来重构未知相的电流。因此，如果保证可以采样到两相的电流，我们就可以通过电流重构的方法，获得所有三相的电流。
 
@@ -1646,7 +1646,7 @@ SVGENCURRENT_RunRegenCurrent(SVGENCURRENT_Handle handle,
 
 - IGNORE_A、IGNORE_B 或 IGNORE_C：在相应相位的测量窗口小于可接受的测量窗口时使用。这也假设被忽略的相位与其他两个相位之间的差异大于可接受的时间。
 
-![实验八-过调制场景下补偿模式示意图](C:\Users\Administrator\Downloads\实验八-过调制场景下补偿模式示意图.png)
+![实验八-过调制场景下补偿模式示意图](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-过调制场景下补偿模式示意图.png)
 
 ##### 2.8.5.4设置转换开始（SOC）触发器
 
@@ -1658,7 +1658,7 @@ SVGENCURRENT_RunRegenCurrent(SVGENCURRENT_Handle handle,
 
 当所有的分流都有效时，触发器被设置在三个脉冲中最窄的那个脉冲的正中间，如下图所示：
 
-![实验八-过调制场景下触发源调整](C:\Users\Administrator\Downloads\实验八-过调制场景下触发源调整.png)
+![实验八-过调制场景下触发源调整](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-过调制场景下触发源调整.png)
 
 当输出电压补偿后有两个分流有效时，触发器被设置在三个脉冲中间长度的那个脉冲的正中间。
 
@@ -1676,21 +1676,21 @@ SVGENCURRENT_RunRegenCurrent(SVGENCURRENT_Handle handle,
 
 跟上一个实验一样，增加速度参考 `motorVars.speedRef_Hz`，直到忽略分流值显示电机在旋转时分流被忽略。
 
-![实验八-过调制场景下速度控制](C:\Users\Administrator\Downloads\实验八-过调制场景下速度控制.png)
+![实验八-过调制场景下速度控制](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-过调制场景下速度控制.png)
 
 如上图所示，默认的参考速度是20Hz，当将参考速度设置到200Hz的时候，可以发现速度只能上升到190Hz，并且稳定下来；通过设置userParams.maxVsMag_pu的值为0.66，则进入过调制区间，电机转速经过PI控制器以后，可以稳定在200HZ。
 
 在进行速度控制的过程中，可以观察到不同速度下，电机转速的误差，
 
-![实验八-20Hz转速误差](C:\Users\Administrator\Downloads\实验八-20Hz转速误差.png)
+![实验八-20Hz转速误差](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-20Hz转速误差.png)
 
-![实验八-150Hz转速误差](C:\Users\Administrator\Downloads\实验八-150Hz转速误差.png)
+![实验八-150Hz转速误差](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-150Hz转速误差.png)
 
-![实验八-过调制场景下200Hz转速误差](C:\Users\Administrator\Downloads\实验八-过调制场景下200Hz转速误差.png)
+![实验八-过调制场景下200Hz转速误差](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-过调制场景下200Hz转速误差.png)
 
 同时，过调制，也只能把电机的转速提高一定的速度范围，而不是无限制的增加。
 
-![实验八-过调制场景下220Hz上不去](C:\Users\Administrator\Downloads\实验八-过调制场景下220Hz上不去.png)
+![实验八-过调制场景下220Hz上不去](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验八-过调制场景下220Hz上不去.png)
 
 #### 2.8.6结论
 
@@ -1743,7 +1743,7 @@ motorVars.flyingStartMode = FLYINGSTART_MODE_STANDBY;
 
 飞行起动控制程序的流程图如下图所示，飞行起动模块输出一个标志来启用或禁用速度闭环控制。在飞行起动运行时，设置零参考扭矩电流，并禁用速度PI控制器输出。
 
-![实验九-飞行启动控制流程图](C:\Users\Administrator\Downloads\实验九-飞行启动控制流程图.png)
+![实验九-飞行启动控制流程图](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验九-飞行启动控制流程图.png)
 
 飞行起动频率和角度搜索算法函数是这个实验室的新功能，必须在主ISR中调用。
 
@@ -1761,7 +1761,7 @@ runMotorCtrl(estHandle);
 
 如下图所示，模块例程禁用速度闭环控制，将参考Iq设为零，并启用HaawkSPIN FOC模块。在测量相电流和电压后，例程运行HaawkSPIN FOC，可以估算实际电机速度。程序在完成飞行起动后重新启用速度闭环控制，并设置速度参考值。
 
-![实验九-飞行启动程序流图](C:\Users\Administrator\Downloads\实验九-飞行启动程序流图.png)
+![实验九-飞行启动程序流图](https://github.com/JunningWu/HaawkingFoC/blob/fd21da080a20e32856b4a1b391b7872ab1bcedf3/YuZhou1.0/pics/实验九-飞行启动程序流图.png)
 
 
 
