@@ -290,15 +290,15 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 
 实验用的电机是一款低压直流伺服电机，产品型号为ZLAC60ASM400。
 
-![ZLAC60ASM400-电机外观和尺寸图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/ZLAC60ASM400-电机外观和尺寸图.png)
+![ZLAC60ASM400-电机外观和尺寸图](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/ZLAC60ASM400-电机外观和尺寸图.png)
 
 
 
-![ZLAC60ASM400-电机电气参数表](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/ZLAC60ASM400-电机电气参数表.png)
+![ZLAC60ASM400-电机电气参数表](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/ZLAC60ASM400-电机电气参数表.png)
 
 
 
-![ZLAC60ASM400-电机接线定义](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/ZLAC60ASM400-电机接线定义.png)
+![ZLAC60ASM400-电机接线定义](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/ZLAC60ASM400-电机接线定义.png)
 
 ##### 1.2.3.2海立新能源压缩机
 
@@ -341,7 +341,7 @@ Scia_Config(115200);
 FMSTR_Init();
 ```
 
-![实验三-三相电流5Hz](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验三-三相电流5Hz.png)
+![实验三-三相电流5Hz](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验三-三相电流5Hz.png)
 
 ### 1.3实验资源
 
@@ -611,15 +611,15 @@ FOC控制需要对电机定子电流进行精确的矢量控制，这依赖于�
 
 请参考《Haawking_HaawkFOC用户指南_V1.0》中的“第5.2节：硬件必要条件”，相关部分概述了需要设置当前偏移量的正确符号，包括正或负。该符号将基于所使用的硬件板的当前反馈极性。电流反馈的正确极性是必要的，以确保微控制器有一个准确的电流测量。对于正反馈信号输入，符号是负的；相反，对于负反馈信号输入，符号是正的。一旦偏移校准完成，结果将存储在motorVars.offsets_I_A和motorVars.offsets_V_V结构体成员中，如下图所示。
 
-![实验二-期望结果三相电流和三相电压校准值](C:\Users\Administrator\Downloads\实验二-期望结果三相电流和三相电压校准值.PNG)
+![实验二-期望结果三相电流和三相电压校准值](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验二-期望结果三相电流和三相电压校准值.PNG)
 
-![实验二-期望结果三相电流和三相电压](C:\Users\Administrator\Downloads\实验二-期望结果三相电流和三相电压.PNG)
+![实验二-期望结果三相电流和三相电压](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验二-期望结果三相电流和三相电压.PNG)
 
 相较于实验一，本实验需要添加两个源文件，offset.c和filter_fo.c，用于补偿电流和电压以及对信号进行滤波；同时，还需要关注更多的全局变量，如filterHandle[]和filter[]（在工程中可能会把电流和电压分开放置，变量名分别为filterHandle_I、filterHandle_V、filter_I和filter_V等）。
 
-![实验二-校准函数和滤波函数](C:\Users\Administrator\Downloads\实验二-校准函数和滤波函数.PNG)
+![实验二-校准函数和滤波函数](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验二-校准函数和滤波函数.PNG)
 
-![实验二全局变量](C:\Users\Administrator\Downloads\实验二全局变量.png)
+![实验二全局变量](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验二全局变量.png)
 
 偏移校准功能允许在电机静止或者未连接电机时根据需要重新计算电压和电流偏移。计算偏移量的方法使用了6个一阶过滤器，它们在HXS320F280049C_EDC_is02_offset_gain_cal工程中main.c程序代码的顶部声明。
 
@@ -694,7 +694,7 @@ HaawkFAST使用的SVM能够饱和到预先规定的占空比。当使用超过10
 
 V/Hz（V/F）控制的应用方式是，在稳定状态期间，磁通量始终保持在期望的值，并且扭矩与供电频率无关。定子电压与频率的比通常是基于这些变量的额定值。典型的V/Hz（V/F）曲线如下图所示。
 
-![实验三-VF模式下定子电压和频率的关系图](C:\Users\Administrator\Downloads\实验三-VF模式下定子电压和频率的关系图.png)
+![实验三-VF模式下定子电压和频率的关系图](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验三-VF模式下定子电压和频率的关系图.png)
 
 基本上，在V/Hz（V/F）外形中存在以下三速范围：
 
@@ -704,7 +704,7 @@ V/Hz（V/F）控制的应用方式是，在稳定状态期间，磁通量始终�
 
 在这个实验中，通过对频率施加一个下限，来修改VF曲线的轮廓，如下图所示。这种方法在一些应用场景下是可以被接受的，如风扇和鼓风机驱动器，在低频下的速度响应不是关键的因素。由于额定电压，也是最大电压，以额定频率施加于电机，因此只需要额定最小和最大频率信息来实现v/f控制曲线。
 
-![实验三-修改的VF模式下定子电压和频率的关系图](C:\Users\Administrator\Downloads\实验三-修改的VF模式下定子电压和频率的关系图.png)
+![实验三-修改的VF模式下定子电压和频率的关系图](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验三-修改的VF模式下定子电压和频率的关系图.png)
 
 有关参数和返回值的更深入的解释，请参考《Haawking_HaawkFOC用户指南_V1.0》文档中的电机控制部分。下面的代码片段演示了角度发生器模块和电压/频率配置文件模块的设置。
 
@@ -739,7 +739,7 @@ VS_FREQ_setProfile(VsFreqHandle,
 
 mainISR()函数是一个执行FOC循环的关键函数。实验室“HXS320F280049C_EDC_is03_hardware_test”的控制方框图如下图所示。mainISR()函数调用Clarke模块，读取ADC，执行ANGLE_GEN_run、VS_FREQ_run和逆Park变换，运行SVGEN，最后写入PWM以进行标量控制（开环控制）。
 
-![实验三-开环控制架构图](C:\Users\Administrator\Downloads\实验三-开环控制架构图.png)
+![实验三-开环控制架构图](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验三-开环控制架构图.png)
 
 
 
@@ -747,7 +747,7 @@ mainISR()函数是一个执行FOC循环的关键函数。实验室“HXS320F2800
 
 调试之前，请确保电机、电源、控制板和驱动板都连接正确，如下图所示：
 
-![实验三-电机电源链接图](C:\Users\Administrator\Downloads\实验三-电机电源链接图.png)
+![实验三-电机电源链接图](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验三-电机电源链接图.png)
 
 在实验二中获得电流和电压的补偿系数，可以填写到user.h文件中，如下所示：
 
@@ -780,15 +780,15 @@ mainISR()函数是一个执行FOC循环的关键函数。实验室“HXS320F2800
 
 此时，通过实时刷新窗口，查看三相电流和三相电压以及母线电压，应如实验二2.2.5节中所示，这里为了方面，贴在下面，如图所示：
 
-![实验二-期望结果三相电流和三相电压](C:\Users\Administrator\Downloads\实验二-期望结果三相电流和三相电压.PNG)
+![实验二-期望结果三相电流和三相电压](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验二-期望结果三相电流和三相电压.PNG)
 
 此时，如果使能motorVars.flagRunIdentAndOnLine，则会发现电机已经转起来了。此时，如果连接上Freemaster，就可以观察三相电流的波形，如下图所示（5Hz转速）：
 
-![实验三-三相电流5Hz](C:\Users\Administrator\Downloads\实验三-三相电流5Hz.png)
+![实验三-三相电流5Hz](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验三-三相电流5Hz.png)
 
 通过调整motorVars.speedRef_Hz的大小，可以调整电机的转速，注意此时是开环控制，电机的转动效果可能不太理想，会存在震动或者噪声。
 
-![实验三-三相电流10Hz](C:\Users\Administrator\Downloads\实验三-三相电流10Hz.png)
+![实验三-三相电流10Hz](https://github.com/JunningWu/HaawkingFoC/blob/7566b07c723e51361a4fd445d694d30b37657ad5/YuZhou1.0/pics/实验三-三相电流10Hz.png)
 
 通过Freemaster查看三相电流和电压，波形存在畸变，这是由于串口通信速率较低造成的，如果条件允许，可以通过示波器来观察三相电流和电压。
 
