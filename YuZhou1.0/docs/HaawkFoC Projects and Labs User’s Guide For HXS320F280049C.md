@@ -1828,15 +1828,15 @@ runMotorCtrl(estHandle);
 
 以下函数是本实验中用到的新函数，如下表所示。这些函数都打包在一个名为 `runRsOnLine()` 的新函数中，该函数在主后台循环中调用。该函数包含以下估算器函数：
 
-![实验十-在线电阻辨识核心函数列表](C:\Users\Administrator\Downloads\实验十-在线电阻辨识核心函数列表.png)
+![实验十-在线电阻辨识核心函数列表](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十-在线电阻辨识核心函数列表.png)
 
 在线电阻辨识的FoC架构图如下所示，红色部分为启用 Rs 在线的函数调用。同样以红色显示的是来自HaawkFAST 的 Id 参考，它在 Rs 在线启用时允许 Rs 在线功能工作。
 
-![实验十-在线电阻辨识FoC架构图](C:\Users\Administrator\Downloads\实验十-在线电阻辨识FoC架构图.png)
+![实验十-在线电阻辨识FoC架构图](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十-在线电阻辨识FoC架构图.png)
 
 实验“HXS320F280049C_EDC_is10_rs_recalc”的状态机流程图如下图所示，允许 Rs 在线重校准在后台循环中工作。
 
-![实验十-在线电阻辨识控制流程图](C:\Users\Administrator\Downloads\实验十-在线电阻辨识控制流程图.png)
+![实验十-在线电阻辨识控制流程图](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十-在线电阻辨识控制流程图.png)
 
 在线辨识的基本步骤
 
@@ -1858,11 +1858,11 @@ runMotorCtrl(estHandle);
 
 一旦电机开始运行，可以看到下图所示的电阻辨识结果。这意味着 Rs 在线功能正在运行，算法正在修改 Id 参考值。
 
-![实验十-在线电阻辨识0.5](C:\Users\Administrator\Downloads\实验十-在线电阻辨识0.5.png)
+![实验十-在线电阻辨识0.5](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十-在线电阻辨识0.5.png)
 
 通过调整motorVars.RsOnLineCurrent_A的值，可以观测到不同的电阻辨识过程。
 
-![实验十-在线电阻辨识1.5](C:\Users\Administrator\Downloads\实验十-在线电阻辨识1.5.png)
+![实验十-在线电阻辨识1.5](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十-在线电阻辨识1.5.png)
 
 #### 2.10.6结论
 
@@ -1917,11 +1917,11 @@ runMotorCtrl(estHandle);
 
 双电机控制的PWM输出波形示例如下图所示，
 
-![实验十一-双电机控制PWM输出波形](C:\Users\Administrator\Downloads\实验十一-双电机控制PWM输出波形.png)
+![实验十一-双电机控制PWM输出波形](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十一-双电机控制PWM输出波形.png)
 
 电机电流波形如下图所示。
 
-![实验十一-双电机控制电流波形](C:\Users\Administrator\Downloads\实验十一-双电机控制电流波形.png)
+![实验十一-双电机控制电流波形](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十一-双电机控制电流波形.png)
 
 `mainISR()` 是时间关键的。在将代码集成到此 ISR 中时，必须验证这两个 ISR 是否能够实时运行。
 
@@ -1933,11 +1933,11 @@ runMotorCtrl(estHandle);
 
 双电机控制，会增加一些C文件和h文件，以及一些全局变量，如下所示。
 
-![实验十一-双电机控制所需新增的c文件](C:\Users\Administrator\Downloads\实验十一-双电机控制所需新增的c文件.png)
+![实验十一-双电机控制所需新增的c文件](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十一-双电机控制所需新增的c文件.png)
 
-![实验十一-双电机控制所需新增的h文件](C:\Users\Administrator\Downloads\实验十一-双电机控制所需新增的h文件.png)
+![实验十一-双电机控制所需新增的h文件](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十一-双电机控制所需新增的h文件.png)
 
-![实验十一-双电机控制所需新增的全局变量](C:\Users\Administrator\Downloads\实验十一-双电机控制所需新增的全局变量.png)
+![实验十一-双电机控制所需新增的全局变量](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十一-双电机控制所需新增的全局变量.png)
 
 
 
@@ -1968,7 +1968,7 @@ runMotorCtrl(estHandle);
   - 通过调整 `motorVars[1].accelerationMax_Hzps` 中的值来修改加速度。
   - 设置参考速度到 `motorVars[1].speedRef_Hz` 以使 motor_2 以目标速度运行。
 
-![实验十一-双电机控制接线图](C:\Users\Administrator\Downloads\实验十一-双电机控制接线图.png)
+![实验十一-双电机控制接线图](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十一-双电机控制接线图.png)
 
 可以通过修改motorVars[1].speedRef_Hz的符号，实现电机的正反转。
 
@@ -2006,11 +2006,11 @@ runMotorCtrl(estHandle);
 
 功率模块的总损耗包括绝缘栅双极型晶体管（IGBT）损耗和自由轮回二极管（FWD）损耗。IGBT的损耗包括稳态导通损耗和开关损耗，如下面公式Ploss(IGBT )所示，而FWD的损耗包括稳态导通损耗和反向恢复损耗，如下面公式Ploss(FWD)所示。
 
-![实验十二-功率损耗公式1](C:\Users\Administrator\Downloads\实验十二-功率损耗公式1.png)
+![实验十二-功率损耗公式1](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十二-功率损耗公式1.png)
 
 IGBT和自由轮回二极管的导通损耗可以通过在导通期间流经集电极/阳极的电流乘以饱和电压的积分来计算。相比之下，开关损耗是由于在过渡和开关事件期间发生的能量损失所引起的。导通损耗主要取决于占空比、负载电流和结温；而开关损耗取决于负载电流、直流母线电压、结温和开关频率，如公式Psw(IGBT)和公式Prec(FWD)所示。
 
-![实验十二-功率损耗公式2](C:\Users\Administrator\Downloads\实验十二-功率损耗公式2.png)
+![实验十二-功率损耗公式2](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十二-功率损耗公式2.png)
 
 IGBT开关损耗和FWD反向恢复损耗随开关频率增加而增加，同时总损耗也随电流增加而增加。如果开关频率较高，则损耗会更高，导致更多的热量产生，这需要更大的功率模块和冷却系统。为了解决这个问题，使用在线可变开关频率方案来减少由于开关损耗引起的功率模块效率低下。
 
@@ -2092,11 +2092,11 @@ VSF_getPeriod(vsfHandle, &(pwmData.period));
 - 将 `pwmFreqSet_Hz` 设置为目标开关频率，单位为 Hz。
 - 在 `vsf.h` 中的 `NUM_VSF_DELTA` 和 `NUM_VSF_WAIT_TIME` 用于设置改变开关频率的斜坡速度。
 
-![实验十二-变频测试之默认15KHz](C:\Users\Administrator\Downloads\实验十二-变频测试之默认15KHz.png)
+![实验十二-变频测试之默认15KHz](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十二-变频测试之默认15KHz.png)
 
-![实验十二-变频测试之20KHz](C:\Users\Administrator\Downloads\实验十二-变频测试之20KHz.png)
+![实验十二-变频测试之20KHz](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十二-变频测试之20KHz.png)
 
-![实验十二-变频测试之5KHz](C:\Users\Administrator\Downloads\实验十二-变频测试之5KHz.png)
+![实验十二-变频测试之5KHz](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十二-变频测试之5KHz.png)
 
 
 
@@ -2140,27 +2140,27 @@ TI的例程中，曾经使用过两款IPM电机，
 
 IPMSM数学模型的电压方程可以用d-q坐标系表示，如下所示：
 
-![实验十三-IPMSM电机的d-q轴电压计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机的d-q轴电压计算公式.png)
+![实验十三-IPMSM电机的d-q轴电压计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的d-q轴电压计算公式.png)
 
 IPM同步电机的动态等效电路如上图所示。IPMSM产生的总转矩T可以用下面的方程表示，即所产生的转矩由两个不同的项组成。第一个项对应于转矩电流id与永磁体之间的相互反应转矩φm，第二个项对应于由于d轴和q轴电感差异而产生的磁阻转矩。
 
-![实验十三-IPMSM电机的扭矩计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机的扭矩计算公式.png)
+![实验十三-IPMSM电机的扭矩计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的扭矩计算公式.png)
 
 在大多数应用中，IPMSM驱动器存在速度和转矩限制，主要由于逆变器或电机额定电流和可用直流母线电压的限制。这些限制可以用下面的数学方程表示：
 
-![实验十三-IPMSM电机的电流和电压限幅值计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机的电流和电压限幅值计算公式.png)
+![实验十三-IPMSM电机的电流和电压限幅值计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的电流和电压限幅值计算公式.png)
 
 其中 Vmax 和 Imax 是逆变器或电机的最大允许电压和电流。在由两级三相电压源逆变器 (VSI) 供电的机器中，最大可实现的相电压受直流母线电压和 PWM 策略的限制。如果采用空间矢量调制 (SVPWM)，最大电压限制如下面方程所示：
 
-![实验十三-IPMSM电机的电压和母线电压关系](C:\Users\Administrator\Downloads\实验十三-IPMSM电机的电压和母线电压关系.png)
+![实验十三-IPMSM电机的电压和母线电压关系](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的电压和母线电压关系.png)
 
 通常在高速运行时，定子电阻 ( Rs \) 可以忽略，并且在稳态下电流的导数为零，因此可以得到如下的方程。
 
-![实验十三-IPMSM电机的电压限幅与转速w的关系](C:\Users\Administrator\Downloads\实验十三-IPMSM电机的电压限幅与转速w的关系.png)
+![实验十三-IPMSM电机的电压限幅与转速w的关系](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的电压限幅与转速w的关系.png)
 
 电流限制在定子电流的 d-q 平面上产生一个半径为 Imax的圆，而电压限制则产生一个随着速度增加而半径减小的椭圆。结果是 d-q 平面的电流矢量必须同时遵守电流和电压限制。根据这些限制，可以区分出 IPMSM 的三个运行区域，如下图所示。
 
-![实验十三-IPMSM电机的三个运行区域](C:\Users\Administrator\Downloads\实验十三-IPMSM电机的三个运行区域.png)
+![实验十三-IPMSM电机的三个运行区域](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的三个运行区域.png)
 
 I. 恒定转矩区域：在该运行区域可以实现 MTPA，以确保最大转矩生成。
 II. 恒定功率区域：必须采用磁场弱化控制，当达到电流限制时转矩能力减小。
@@ -2170,27 +2170,27 @@ III. 恒定电压区域：在该运行区域，深度磁场弱化控制保持恒
 
 传统的 SPM 电机矢量控制系统仅利用电磁转矩，在非磁场弱化模式下将指令 i_d 设为零。但对于 IPMSM，为了利用电机的磁阻转矩，也应控制 d 轴电流。MTPA 控制的目的是计算参考电流 i_d 和 i_q，以最大化产生的电磁转矩和磁阻转矩之间的比例。以下方程展示了 i_d、i_q 和定子电流矢量和 I_s 之间的关系：
 
-![实验十三-IPMSM电机的定子电流的计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机的定子电流的计算公式.png)
+![实验十三-IPMSM电机的定子电流的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的定子电流的计算公式.png)
 
 则，前面力矩Te的计算公式，可以将Is带入后，得到如下公式：
 
-![实验十三-IPMSM电机带入Is后力矩Te的计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机带入Is后力矩Te的计算公式.png)
+![实验十三-IPMSM电机带入Is后力矩Te的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机带入Is后力矩Te的计算公式.png)
 
 上面的方程表明，电机转矩取决于定子电流矢量的角度。因此，当电机转矩微分等于零时，可以计算出最大效率点。当微分 \(\frac{dT}{d\theta}\) 等于零时，可以找到 MTPA 点，如下面的方程所示：
 
-![实验十三-IPMSM电机MTPA的计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机MTPA的计算公式.png)
+![实验十三-IPMSM电机MTPA的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机MTPA的计算公式.png)
 
 接下来，MTPA 控制的电流角度可以推导如下：
 
-![实验十三-IPMSM电机MTPA时电流角度的计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机MTPA时电流角度的计算公式.png)
+![实验十三-IPMSM电机MTPA时电流角度的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时电流角度的计算公式.png)
 
 因此，使用 MTPA 控制的电流角度，可以用下面方程表示有效的 d 轴和 q 轴参考电流。
 
-![实验十三-IPMSM电机MTPA时Id和Iq的计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机MTPA时Id和Iq的计算公式.png)
+![实验十三-IPMSM电机MTPA时Id和Iq的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时Id和Iq的计算公式.png)
 
 然而，如方程βmtpa所示，MTPA 控制的角度与 d 轴和 q 轴电感有关。这意味着电感的变化会阻碍找到最佳 MTPA 点的能力。为了提高电机驱动的效率，d 轴和 q 轴电感应该在线估计，但参数 \(L_d\) 和 \(L_q\) 在线测量不易，并且受到饱和效应的影响。一个健壮的查找表 (LUT) 可以确保在电气参数变化下的可控性。通常，为了简化数学模型，可以忽略 d 轴和 q 轴电感之间的耦合效应。因此，\(L_d\) 只随 \(i_d\) 变化，\(L_q\) 只随 \(i_q\) 变化。因此，d 轴和 q 轴电感可以分别建模为它们各自 d-q 电流的函数，如下所示。
 
-![实验十三-IPMSM电机MTPA时Ld和Lq的计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机MTPA时Ld和Lq的计算公式.png)
+![实验十三-IPMSM电机MTPA时Ld和Lq的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时Ld和Lq的计算公式.png)
 
 通过简化βmtpa方程可以减少 ISR 计算的负担。使用基于电机参数的常数 \( kmtpa \)，则βmtpa方程可以改写为如下的计算公式，其中kmtpa在后台循环中使用更新的 \( L_d \) 和 \( L_q \) 进行计算。
 
