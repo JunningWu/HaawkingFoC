@@ -302,9 +302,9 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 
 ##### 1.2.3.2海立新能源压缩机
 
-![海立压缩机外观图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/海立压缩机外观图.png)
+![海立压缩机外观图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/海立压缩机外观图.png)
 
-![海立压缩机参数](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/海立压缩机参数.png)
+![海立压缩机参数](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/海立压缩机参数.png)
 
 额定输入电压是24V;
 额定电流约6A;
@@ -314,7 +314,7 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 
 HaawkFAST估算出来的参数如下：
 
-![海立压缩机估算参数](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/海立压缩机估算参数.png)
+![海立压缩机估算参数](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/海立压缩机估算参数.png)
 
 
 
@@ -2371,9 +2371,9 @@ currentPhasor.value[1] = sinf(motorVars.angleCurrent_rad);
 
 6、**按运转速度**：高速电动机、低速电动机、恒速电动机、调速电动机。
 
-![电机分类总图](C:\Users\Administrator\Downloads\电机分类总图.png)
+![电机分类总图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/电机分类总图.png)
 
-![电机分类总图之二](C:\Users\Administrator\Downloads\电机分类总图之二.png)
+![电机分类总图之二](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/电机分类总图之二.png)
 
 #### 3.1.1直流电机
 
@@ -2433,17 +2433,17 @@ currentPhasor.value[1] = sinf(motorVars.angleCurrent_rad);
 
 同步电动机的转速，可以由下面的公式计算而来：
 
-![同步电动机转速计算公式](C:\Users\Administrator\Downloads\同步电动机转速计算公式.png)
+![同步电动机转速计算公式](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/同步电动机转速计算公式.png)
 
 同步电动机有电动和发电两种状态，其稳定性极限如下所示：
 
-![同步电机的电动和发电稳定极限](C:\Users\Administrator\Downloads\同步电机的电动和发电稳定极限.png)
+![同步电机的电动和发电稳定极限](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/同步电机的电动和发电稳定极限.png)
 
 ##### 3.1.2.2表贴式PMSM
 
 当三相PMSM转子磁路的结构不同时，电机的运行性能、控制方法、制造工艺和适用场合也会不同。目前，根据永磁体转子上的位置不同，三相PMSM的转子结构可以分为表贴式和内置式两种结构。
 
-![永磁同步电机IPM-SPM](C:\Users\Administrator\Downloads\永磁同步电机IPM-SPM.png)
+![永磁同步电机IPM-SPM](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/永磁同步电机IPM-SPM.png)
 
 表面式永磁电动机简称 SPM，结构较简单，由于永久磁铁固定在转子表面，因此电动机的转子和定子中间有较宽的气隙，而磁铁的磁导率和空气相当，因此转子的凸极效应（saliency）很小，可以省略。较大的气隙也使得转子的电枢效应减弱，因此其电感Ld很小，也影响电动机的定子时间常数。
 
@@ -2493,7 +2493,7 @@ currentPhasor.value[1] = sinf(motorVars.angleCurrent_rad);
 
 异步电动机若接在频率为f的电网上运行时，转速n与电网频率f之间不存在同步电动机那样的恒定的比例关系。同步速和转子转速之间有转差，转差率通常介于3%到10%。如果转子转速高于同步速，则变成发电机。
 
-![异步电动机的同步速计算公式](C:\Users\Administrator\Downloads\异步电动机的同步速计算公式.png)
+![异步电动机的同步速计算公式](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/异步电动机的同步速计算公式.png)
 
 异步电动机的转子绕组中没有使用外加电源供电，而是通过定子产生的旋转磁场（其转速为同步转速n1）与转子绕组的相对运动，转子绕组切割磁感线产生感应电动势，从而使转子绕组中产生感应电流，感应电流的方式类似变压器中二次绕组感应电流的方式。
 
@@ -2501,7 +2501,7 @@ currentPhasor.value[1] = sinf(motorVars.angleCurrent_rad);
 
 为了产生转子电流，转子的实际转速会比定子旋转磁场的转速（ns）慢一些，否则旋转磁场和转子导体没有相对运动，转子上不会感应到电流。若转子速度低于同步速度，且持续下降，转子上的磁场旋转速度会增加，感应的电流会变大，也会产生较大的力矩。在有负载时，转子速度会下降，会产生够大的力矩推动负载旋转。因此感应电动机也称为是异步电动机。
 
-![异步电动机的转差率计算公式](C:\Users\Administrator\Downloads\异步电动机的转差率计算公式.png)
+![异步电动机的转差率计算公式](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/异步电动机的转差率计算公式.png)
 
 因为鼠笼式转子的电阻很小，很小的转差率就可以产生转子的大电流，因而产生够大的转矩。在满载时，小功率电动机或是特殊用途的转差率约为5%，若是大功率电动机，转差率会小于1%。若功率不同的电动机直接以机械方式连接相同负载，其转差率的差异可能会造成负载分配的问题。
 
@@ -2549,7 +2549,7 @@ currentPhasor.value[1] = sinf(motorVars.angleCurrent_rad);
 
 如下图所示，是一些常见的电机控制算法，可以大致分为Basic、Advanced和Senior三类。
 
-![电机控制算法种类](C:\Users\Administrator\Downloads\电机控制算法种类.png)
+![电机控制算法种类](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/电机控制算法种类.png)
 
 #### 3.2.1基础算法
 
@@ -2572,11 +2572,11 @@ FOC算法的控制架构，一般包括以下组件：
 
 永磁同步电机的FOC控制框图：
 
-![pmsm_foc](C:\Users\Administrator\Downloads\pmsm_foc.png)
+![pmsm_foc](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/pmsm_foc.png)
 
 交流感应电机 (ACIM)的FOC控制框图：
 
-![acim_foc](C:\Users\Administrator\Downloads\acim_foc.png)
+![acim_foc](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/acim_foc.png)
 
 
 
@@ -2590,7 +2590,7 @@ FOC算法的控制架构，一般包括以下组件：
 
 方波控制方法的长处是控制算法简单、硬件成本较低，运用功能普通的控制器便能取得较高的电机转速；缺陷是转矩脉动大、存在必定的电流噪声、功率达不到最大值。方波操控适用于对电机滚动功能要求不高的场合。
 
-![方波控制的电流波形图](C:\Users\Administrator\Downloads\方波控制的电流波形图.png)
+![方波控制的电流波形图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/方波控制的电流波形图.png)
 
 
 
@@ -2600,7 +2600,7 @@ FOC算法的控制架构，一般包括以下组件：
 
 SPWM-Sinusoidal  Pulse  Witdh Modulation正弦脉宽调制 ，与PWM区别就是一个Sinusoidal ，这里不是想当然的加在控制对象上一个正弦信号波，而是仍然使用变种PWM控制来达到等同于正弦信号直接加载到控制对象上，而且设计生成一个控制对象的正弦波是很难的。
 
-![SPWM正弦波控制](C:\Users\Administrator\Downloads\SPWM正弦波控制.png)
+![SPWM正弦波控制](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/SPWM正弦波控制.png)
 
 正弦波控制器的实现方式包括模拟控制和数字控制两种。模拟控制器一般使用操作放大器等模拟电路来实现电机控制，具有快速响应、实时性好等优点，但是精度受到器件的限制，控制精度较低。数字控制器则通过数字信号处理器（DSP）等处理器来实现电机的控制，具有高精度、可编程性强等优点，但是需要高性能的处理器和复杂的控制算法，成本较高。
 
@@ -2612,17 +2612,17 @@ SPWM-Sinusoidal  Pulse  Witdh Modulation正弦脉宽调制 ，与PWM区别就是
 
 当使用三相逆变器进行电机控制时，经常需要获取相电流以进行闭环控制，这就涉及到一个电流采样问题。尽管现在有许多电流检测方法，但低成本、大批量应用中常见的只有三种，其它都是昂贵的实验室系统、新兴技术或很少使用的方法。常用技术包括：采样电阻、霍尔元件与电流互感器。这些技术又可进一步细分，详见下图：
 
-![电流采样方式分类](C:\Users\Administrator\Downloads\电流采样方式分类.png)
+![电流采样方式分类](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/电流采样方式分类.png)
 
 按照采样电阻放置位置不同，电阻采样方案可分为两大类——高端采样(High-Side Sensing)与低端采样(Low-Side Sensing)，其区别见下图：
 
-![高端电流采样和低端电流采样](C:\Users\Administrator\Downloads\高端电流采样和低端电流采样.png)
+![高端电流采样和低端电流采样](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/高端电流采样和低端电流采样.png)
 
 **高端采样**
 
 对于三相逆变器电路，采样电阻直接置于相电流桥臂上即可，如下图所示，根据基尔霍夫电流定律，只需要测量两相的电流即可，另一相电流可通过计算得到。
 
-![高端电流采样示意图](C:\Users\Administrator\Downloads\高端电流采样示意图.png)
+![高端电流采样示意图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/高端电流采样示意图.png)
 
 高端采样的优势在于：
 
@@ -2635,11 +2635,11 @@ SPWM-Sinusoidal  Pulse  Witdh Modulation正弦脉宽调制 ，与PWM区别就是
 
 一般来说，高端采样是一种较为昂贵的解决方案，考虑到成本问题，更为普遍使用的是低端采样方案。常用的低端采样方案根据使用电阻数量的不同可分为三种——三电阻采样、双电阻采样与单电阻采样，其电路结构见下面的组图：
 
-![低端采样之三电阻采样示意图](C:\Users\Administrator\Downloads\低端采样之三电阻采样示意图.png)
+![低端采样之三电阻采样示意图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/低端采样之三电阻采样示意图.png)
 
-![低端采样之两电阻采样示意图](C:\Users\Administrator\Downloads\低端采样之两电阻采样示意图.png)
+![低端采样之两电阻采样示意图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/低端采样之两电阻采样示意图.png)
 
-![低端采样之单电阻采样示意图](C:\Users\Administrator\Downloads\低端采样之单电阻采样示意图.png)
+![低端采样之单电阻采样示意图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/低端采样之单电阻采样示意图.png)
 
 其中，最为常用的是双电阻采样方案，在某些成本敏感的应用中，也会选用单电阻采样方案。
 
@@ -2657,37 +2657,37 @@ SPWM-Sinusoidal  Pulse  Witdh Modulation正弦脉宽调制 ，与PWM区别就是
 
 从原理图中可以看到，当下桥臂的开关管断开的时候，采样电阻上显然是不会有电流流过的；只有当下桥臂开关管导通的时候，由于负载是感性负载，此时才会有续流电流从下桥臂流过，这个续流电流就等于相电流。 以SVPWM调试波形为例，
 
-![下桥臂电流和相电流的关系示意图](C:\Users\Administrator\Downloads\下桥臂电流和相电流的关系示意图.png)
+![下桥臂电流和相电流的关系示意图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂电流和相电流的关系示意图.png)
 
 从上图中可以看到，相电流是基本连续的，然而下桥臂电流并不连续，当且仅当下桥臂导通时流过下桥臂采样电阻的电流才等于相电流。
 
 所以对于双电阻及三电阻采样方案而言，只需要在SVPWM的零矢量（000）中央处进行采样即可获得正确的相电流。采样时刻示意图见下面这两幅图：
 
-![下桥臂电流采样PWM波形图](C:\Users\Administrator\Downloads\下桥臂电流采样PWM波形图.png)
+![下桥臂电流采样PWM波形图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂电流采样PWM波形图.png)
 
-![下桥臂电流采样ADC示意图](C:\Users\Administrator\Downloads\下桥臂电流采样ADC示意图.png)
+![下桥臂电流采样ADC示意图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂电流采样ADC示意图.png)
 
 上面介绍的是双电阻采样，可以通过其中两相的电流，拟合出第三相电流；不过，双电阻采样的情况下，尽管可以通过电流平衡条件推算出第三相的电流，不过此方案有一个问题，在某些情况下（如SVPWM几个扇区的交界处），采样窗口时间会变得很短。而三电阻采样则不存在此问题，任何时刻都可丢弃采样窗口时间较短采样电阻的结果，用其他两相的电流值来推出此相的电流，其原理说明见下图：
 
-![下桥臂三电阻采样原理示意图](C:\Users\Administrator\Downloads\下桥臂三电阻采样原理示意图.png)
+![下桥臂三电阻采样原理示意图](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂三电阻采样原理示意图.png)
 
 单电阻采样方案中，是通过在一个PWM周期内进行两次AD采样实现相电流检测的，其采样时刻见下图所示：
 
-![下桥臂单电阻采样原理示意图之一](C:\Users\Administrator\Downloads\下桥臂单电阻采样原理示意图之一.png)
+![下桥臂单电阻采样原理示意图之一](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂单电阻采样原理示意图之一.png)
 
-![下桥臂单电阻采样原理示意图之二](C:\Users\Administrator\Downloads\下桥臂单电阻采样原理示意图之二.png)
+![下桥臂单电阻采样原理示意图之二](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂单电阻采样原理示意图之二.png)
 
 
 
-![下桥臂单电阻采样原理示意图之三](C:\Users\Administrator\Downloads\下桥臂单电阻采样原理示意图之三.jpg)
+![下桥臂单电阻采样原理示意图之三](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂单电阻采样原理示意图之三.jpg)
 
 上图中的T1与T2阶段就是采样时刻。而采样得到的电流值与相电流的对应关系见下表：
 
-![下桥臂单电阻采样原理示意图之四](C:\Users\Administrator\Downloads\下桥臂单电阻采样原理示意图之四.png)
+![下桥臂单电阻采样原理示意图之四](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂单电阻采样原理示意图之四.png)
 
 与双电阻采样方案一样，单电阻采样方案也存在一些不允许单分流三相重构的特殊情形。在SVPWM中，有些时候会输出两路占空比相等的PWM信号，如下图所示，此时T2=0，不能重构得到三相电流信息。除此之外，死区时间等因素也会影响采样窗口。
 
-![下桥臂单电阻采样无法重构电流的情形](C:\Users\Administrator\Downloads\下桥臂单电阻采样无法重构电流的情形.png)
+![下桥臂单电阻采样无法重构电流的情形](https://github.com/JunningWu/HaawkingFoC/blob/c8a7bc91087f1eed924c2efb834132eb00fa02b1/YuZhou1.0/pics/下桥臂单电阻采样无法重构电流的情形.png)
 
 解决此问题有几种不同的方案，其中最常用的一种方法是：在相邻边界的时候插入固定时间的有效矢量，而在低调制区域的时候，采用轮流插入有效矢量的方法。插入有效矢量会给电流波形带来失真，这种情况下需要通过软件来进行补偿。
 
