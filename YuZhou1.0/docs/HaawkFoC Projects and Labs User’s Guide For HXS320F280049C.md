@@ -2140,27 +2140,27 @@ TI的例程中，曾经使用过两款IPM电机，
 
 IPMSM数学模型的电压方程可以用d-q坐标系表示，如下所示：
 
-![实验十三-IPMSM电机的d-q轴电压计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的d-q轴电压计算公式.png)
+![实验十三-IPMSM电机的d-q轴电压计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机的d-q轴电压计算公式.png)
 
 IPM同步电机的动态等效电路如上图所示。IPMSM产生的总转矩T可以用下面的方程表示，即所产生的转矩由两个不同的项组成。第一个项对应于转矩电流id与永磁体之间的相互反应转矩φm，第二个项对应于由于d轴和q轴电感差异而产生的磁阻转矩。
 
-![实验十三-IPMSM电机的扭矩计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的扭矩计算公式.png)
+![实验十三-IPMSM电机的扭矩计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机的扭矩计算公式.png)
 
 在大多数应用中，IPMSM驱动器存在速度和转矩限制，主要由于逆变器或电机额定电流和可用直流母线电压的限制。这些限制可以用下面的数学方程表示：
 
-![实验十三-IPMSM电机的电流和电压限幅值计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的电流和电压限幅值计算公式.png)
+![实验十三-IPMSM电机的电流和电压限幅值计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机的电流和电压限幅值计算公式.png)
 
 其中 Vmax 和 Imax 是逆变器或电机的最大允许电压和电流。在由两级三相电压源逆变器 (VSI) 供电的机器中，最大可实现的相电压受直流母线电压和 PWM 策略的限制。如果采用空间矢量调制 (SVPWM)，最大电压限制如下面方程所示：
 
-![实验十三-IPMSM电机的电压和母线电压关系](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的电压和母线电压关系.png)
+![实验十三-IPMSM电机的电压和母线电压关系](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机的电压和母线电压关系.png)
 
 通常在高速运行时，定子电阻 ( Rs \) 可以忽略，并且在稳态下电流的导数为零，因此可以得到如下的方程。
 
-![实验十三-IPMSM电机的电压限幅与转速w的关系](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的电压限幅与转速w的关系.png)
+![实验十三-IPMSM电机的电压限幅与转速w的关系](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机的电压限幅与转速w的关系.png)
 
 电流限制在定子电流的 d-q 平面上产生一个半径为 Imax的圆，而电压限制则产生一个随着速度增加而半径减小的椭圆。结果是 d-q 平面的电流矢量必须同时遵守电流和电压限制。根据这些限制，可以区分出 IPMSM 的三个运行区域，如下图所示。
 
-![实验十三-IPMSM电机的三个运行区域](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的三个运行区域.png)
+![实验十三-IPMSM电机的三个运行区域](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机的三个运行区域.png)
 
 I. 恒定转矩区域：在该运行区域可以实现 MTPA，以确保最大转矩生成。
 II. 恒定功率区域：必须采用磁场弱化控制，当达到电流限制时转矩能力减小。
@@ -2170,27 +2170,27 @@ III. 恒定电压区域：在该运行区域，深度磁场弱化控制保持恒
 
 传统的 SPM 电机矢量控制系统仅利用电磁转矩，在非磁场弱化模式下将指令 i_d 设为零。但对于 IPMSM，为了利用电机的磁阻转矩，也应控制 d 轴电流。MTPA 控制的目的是计算参考电流 i_d 和 i_q，以最大化产生的电磁转矩和磁阻转矩之间的比例。以下方程展示了 i_d、i_q 和定子电流矢量和 I_s 之间的关系：
 
-![实验十三-IPMSM电机的定子电流的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机的定子电流的计算公式.png)
+![实验十三-IPMSM电机的定子电流的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机的定子电流的计算公式.png)
 
 则，前面力矩Te的计算公式，可以将Is带入后，得到如下公式：
 
-![实验十三-IPMSM电机带入Is后力矩Te的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机带入Is后力矩Te的计算公式.png)
+![实验十三-IPMSM电机带入Is后力矩Te的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机带入Is后力矩Te的计算公式.png)
 
 上面的方程表明，电机转矩取决于定子电流矢量的角度。因此，当电机转矩微分等于零时，可以计算出最大效率点。当微分 \(\frac{dT}{d\theta}\) 等于零时，可以找到 MTPA 点，如下面的方程所示：
 
-![实验十三-IPMSM电机MTPA的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机MTPA的计算公式.png)
+![实验十三-IPMSM电机MTPA的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机MTPA的计算公式.png)
 
 接下来，MTPA 控制的电流角度可以推导如下：
 
-![实验十三-IPMSM电机MTPA时电流角度的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时电流角度的计算公式.png)
+![实验十三-IPMSM电机MTPA时电流角度的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时电流角度的计算公式.png)
 
 因此，使用 MTPA 控制的电流角度，可以用下面方程表示有效的 d 轴和 q 轴参考电流。
 
-![实验十三-IPMSM电机MTPA时Id和Iq的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时Id和Iq的计算公式.png)
+![实验十三-IPMSM电机MTPA时Id和Iq的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时Id和Iq的计算公式.png)
 
 然而，如方程βmtpa所示，MTPA 控制的角度与 d 轴和 q 轴电感有关。这意味着电感的变化会阻碍找到最佳 MTPA 点的能力。为了提高电机驱动的效率，d 轴和 q 轴电感应该在线估计，但参数 \(L_d\) 和 \(L_q\) 在线测量不易，并且受到饱和效应的影响。一个健壮的查找表 (LUT) 可以确保在电气参数变化下的可控性。通常，为了简化数学模型，可以忽略 d 轴和 q 轴电感之间的耦合效应。因此，\(L_d\) 只随 \(i_d\) 变化，\(L_q\) 只随 \(i_q\) 变化。因此，d 轴和 q 轴电感可以分别建模为它们各自 d-q 电流的函数，如下所示。
 
-![实验十三-IPMSM电机MTPA时Ld和Lq的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时Ld和Lq的计算公式.png)
+![实验十三-IPMSM电机MTPA时Ld和Lq的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时Ld和Lq的计算公式.png)
 
 通过简化βmtpa方程可以减少 ISR 计算的负担。使用基于电机参数的常数 \( kmtpa \)，则βmtpa方程可以改写为如下的计算公式，其中kmtpa在后台循环中使用更新的 \( L_d \) 和 \( L_q \) 进行计算。
 
