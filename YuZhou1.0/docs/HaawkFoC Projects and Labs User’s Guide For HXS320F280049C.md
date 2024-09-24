@@ -262,7 +262,7 @@ ePWM控制MOS管的开通和关闭，具体的拓扑如下所示：
 
 由于YuZhou_V1.2驱动板的尺寸问题，在进行双电机调试的时候，没办法直接接插到DSC280049C的LaunchBoard板上，需要加高一个驱动板，如下图所示：
 
-![实验十一-双电机控制接线图](https://github.com/JunningWu/HaawkingFoC/blob/336e6226dc2a86175f02b21b32e6cbdd58280651/YuZhou1.0/pics/实验十一-双电机控制接线图.png)
+![实验十一-双电机控制接线图](https://github.com/JunningWu/HaawkingFoC/blob/0cb61a543d1834877a553eb7aaf7af9ea915bd6a/YuZhou1.0/pics/实验十一-双电机控制接线图.png)
 
 #### 1.2.3 YuZhou_V1.3驱动板
 
@@ -1968,7 +1968,7 @@ runMotorCtrl(estHandle);
   - 通过调整 `motorVars[1].accelerationMax_Hzps` 中的值来修改加速度。
   - 设置参考速度到 `motorVars[1].speedRef_Hz` 以使 motor_2 以目标速度运行。
 
-![实验十一-双电机控制接线图](https://github.com/JunningWu/HaawkingFoC/blob/ac25326f854653ec54fd8c8f9ce8482635ad68cc/YuZhou1.0/pics/实验十一-双电机控制接线图.png)
+![实验十一-双电机控制接线图](https://github.com/JunningWu/HaawkingFoC/blob/0cb61a543d1834877a553eb7aaf7af9ea915bd6a/YuZhou1.0/pics/实验十一-双电机控制接线图.png)
 
 可以通过修改motorVars[1].speedRef_Hz的符号，实现电机的正反转。
 
