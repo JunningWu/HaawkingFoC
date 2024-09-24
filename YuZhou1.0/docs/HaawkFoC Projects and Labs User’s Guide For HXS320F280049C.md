@@ -2194,17 +2194,17 @@ III. 恒定电压区域：在该运行区域，深度磁场弱化控制保持恒
 
 通过简化βmtpa方程可以减少 ISR 计算的负担。使用基于电机参数的常数 \( kmtpa \)，则βmtpa方程可以改写为如下的计算公式，其中kmtpa在后台循环中使用更新的 \( L_d \) 和 \( L_q \) 进行计算。
 
-![实验十三-IPMSM电机MTPA时电流角度简化的计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机MTPA时电流角度简化的计算公式.png)
+![实验十三-IPMSM电机MTPA时电流角度简化的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时电流角度简化的计算公式.png)
 
 为了进一步简化βmtpa的计算，引入一个临时变量Gmtpa，如下所示。这两个方程的计算在 ISR 中进行，以获得实际的电流角度。
 
-![实验十三-IPMSM电机MTPA时电流角度进一步简化的计算公式](C:\Users\Administrator\Downloads\实验十三-IPMSM电机MTPA时电流角度进一步简化的计算公式.png)
+![实验十三-IPMSM电机MTPA时电流角度进一步简化的计算公式](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机MTPA时电流角度进一步简化的计算公式.png)
 
 在所有情况下，通过作用于直轴电流 \( I_d \)，可以削弱磁通以扩展可实现的速度范围。因此，当进入这种恒功率操作区域时，会选择场弱化控制，而不是用于恒转矩区域的 MTPA 控制。
 
 由于逆变器的最大电压有限，PMSM 电机无法在反电动势高于逆变器最大输出电压的速度区域中运行，反电动势几乎与永磁体的磁场和电机速度成正比。对 PM 电机来说，直接控制磁通不是一个选项。然而，可以通过在直轴电流中加入负值id，利用电枢反应的去磁效应来削弱气隙磁通。考虑到电压和电流限制，电枢电流 \( I_a \) 和端电压 \( V \) 受到方程Ia和方程Va的限制。逆变器输入电压（DC 链路电压）的变化限制了电机的最大输出。此外，最大基波电机电压也取决于使用的 PWM 方法。IPMSM 具有两个因素：一个是永磁体的值，另一个是由电感和磁通电流决定的。
 
-![实验十三-IPMSM电机MTPA和FWC控制流程图](C:\Users\Administrator\Downloads\实验十三-IPMSM电机MTPA和FWC控制流程图.png)
+![实验十三-IPMSM电机MTPA和FWC控制流程图](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-IPMSM电机MTPA和FWC控制流程图.png)
 
 上图显示了用于实现场弱化的典型控制结构； \( I_{d,ref} \) 是场弱化（FW）PI 控制器的输出，并生成参考电流 \( I_d \) 和 \( I_q \)。在电压幅值达到其极限之前，场弱化 PI 控制器的输入始终为正，因此其输出始终饱和在 0。
 
@@ -2217,17 +2217,17 @@ III. 恒定电压区域：在该运行区域，深度磁场弱化控制保持恒
 - 场弱化（FW）和每安培最大扭矩（MTPA）模块
 - 空间矢量调制模块
 
-![实验十三-HaawFOC中MTPA和FWC控制框图](C:\Users\Administrator\Downloads\实验十三-HaawFOC中MTPA和FWC控制框图.png)
+![实验十三-HaawFOC中MTPA和FWC控制框图](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-HaawFOC中MTPA和FWC控制框图.png)
 
 HaawkSPIN FOC 电机驱动系统中有两个控制模块，如上图所示：一个是 MTPA 控制，另一个是场弱化控制。这两个模块分别基于输入参数生成电流角度β。切换控制模块用于决定应用哪个角度，然后计算参考电流 \( i_d \) 和 \( i_q \)，如图 77 所示。电流角度的选择如下：
 - \( \theta = \theta_{MTPA} \) 如果 \( V_{d} > V_{d,\text{limit}} \)
 - \( \theta = \theta_{FW} \) 如果 \( V_{d} \leq V_{d,\text{limit}} \)
 
-![实验十三-HaawFOC中MTPA和FWC控制示意图](C:\Users\Administrator\Downloads\实验十三-HaawFOC中MTPA和FWC控制示意图.png)
+![实验十三-HaawFOC中MTPA和FWC控制示意图](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-HaawFOC中MTPA和FWC控制示意图.png)
 
 下图是一个程序控制的流程图，展示了在主循环和中断中运行HaawkSPIN FOC 与场弱化（FW）和最大转矩每安培（MTPA）的步骤。
 
-![实验十三-HaawFOC中MTPA和FWC程序流图](C:\Users\Administrator\Downloads\实验十三-HaawFOC中MTPA和FWC程序流图.png)
+![实验十三-HaawFOC中MTPA和FWC程序流图](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-HaawFOC中MTPA和FWC程序流图.png)
 
 在后台循环中更新 FW 和 MTPA 模块的控制参数
 
@@ -2321,21 +2321,21 @@ currentPhasor.value[1] = sinf(motorVars.angleCurrent_rad);
 
 电机的默认速度是20Hz，可以通过调整电机的转速，查看Idq_ref_A.value[0]的符号，如果该值变成负数，则说明已经进入弱磁区间；同时，也可以通过fwcHandle结构体查看弱磁的Kp和Ki值，以及反馈值。
 
-![实验十三-弱磁开关未使能，Id接近于0,100Hz](C:\Users\Administrator\Downloads\实验十三-弱磁开关未使能，Id接近于0,100Hz.png)
+![实验十三-弱磁开关未使能，Id接近于0,100Hz](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-弱磁开关未使能，Id接近于0,100Hz.png)
 
 针对电机ZLAC60ASM400，当转速超过180Hz的时候，就开始进入弱磁区间；但是可以看出，跟过调制相比较，转速的提升并不明显，即使打开弱磁，也上不到200Hz。
 
 未打开弱磁功能，测试结果如下：
 
-![实验十三-弱磁开关未使能，Id接近于0,190Hz，速度无法跟踪](C:\Users\Administrator\Downloads\实验十三-弱磁开关未使能，Id接近于0,190Hz，速度无法跟踪.png)
+![实验十三-弱磁开关未使能，Id接近于0,190Hz，速度无法跟踪](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-弱磁开关未使能，Id接近于0,190Hz，速度无法跟踪.png)
 
-![实验十三-弱磁开关未使能，Id接近于0,190Hz，速度无法跟踪-之二](C:\Users\Administrator\Downloads\实验十三-弱磁开关未使能，Id接近于0,190Hz，速度无法跟踪-之二.png)
+![实验十三-弱磁开关未使能，Id接近于0,190Hz，速度无法跟踪-之二](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-弱磁开关未使能，Id接近于0,190Hz，速度无法跟踪-之二.png)
 
 打开弱磁功能，测试结果如下：
 
-![实验十三-弱磁开关使能，Id接近于0,190Hz，速度可以跟踪-之一](C:\Users\Administrator\Downloads\实验十三-弱磁开关使能，Id接近于0,190Hz，速度可以跟踪-之一.png)
+![实验十三-弱磁开关使能，Id接近于0,190Hz，速度可以跟踪-之一](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-弱磁开关使能，Id接近于0,190Hz，速度可以跟踪-之一.png)
 
-![实验十三-弱磁开关使能，Id接近于0,190Hz，速度可以跟踪-之二](C:\Users\Administrator\Downloads\实验十三-弱磁开关使能，Id接近于0,190Hz，速度可以跟踪-之二.png)
+![实验十三-弱磁开关使能，Id接近于0,190Hz，速度可以跟踪-之二](https://github.com/JunningWu/HaawkingFoC/blob/9d4be91f03a3ab8b5fa512c9c67187ab8eb0b071/YuZhou1.0/pics/实验十三-弱磁开关使能，Id接近于0,190Hz，速度可以跟踪-之二.png)
 
 实验结束后，停止电机的方法：
 
