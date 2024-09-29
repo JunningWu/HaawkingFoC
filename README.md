@@ -14,6 +14,8 @@
 ![HaawkFoC Projects and Labs User’s
 Guide For HXS320F280049C & HXS320F280025C](https://github.com/JunningWu/HaawkingFoC/blob/fa1aa607fcd8dbaa42228e9f00d4e4f0cd4e42e1/YuZhou1.0/docs/HaawkFoC%20Projects%20and%20Labs%20User%E2%80%99s%20Guide%20For%20HXS320F280049C.md)
 
+### 第一讲
+![HaawkFoC十三讲之第一讲is01_intro_hal](https://www.bilibili.com/video/BV1zDxregE3B/?share_source=copy_web&vd_source=c9548021cbe9075ce54eb54620a2b4d9)
 
 
 ## HaawkingSmartControl
