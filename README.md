@@ -2,9 +2,6 @@
 
 ## HaawkFOC十三讲培训
 
-培训资料：![HaawkFoC Projects and Labs User’s
-Guide For HXS320F280049C & HXS320F280025C](https://github.com/JunningWu/HaawkingFoC/blob/fa1aa607fcd8dbaa42228e9f00d4e4f0cd4e42e1/YuZhou1.0/docs/HaawkFoC%20Projects%20and%20Labs%20User%E2%80%99s%20Guide%20For%20HXS320F280049C.md)
-
 
 **HaawkingFOC**是一个包括有感FOC和无感FOC算法控制永磁同步电机PMSM、直流无刷电机BLDC等汇总仓库，涉及到电机控制算法、上位机程序、电机控制系统、硬件开发板等，包括
   - HaawkFOC(TM)：无感FOC算法，内置在第三代HX2000系列RISC-V DSP芯片中，如HXS320F280025C、HXS320F280039C、HXS320F280049C
@@ -13,6 +10,12 @@ Guide For HXS320F280049C & HXS320F280025C](https://github.com/JunningWu/Haawking
   - LaunchBoard(TM)：集成了昊芯自主研发的H28x内核的RISC-V DSP芯片，集成昊芯调试器，主频高于国际友商同型号产品， 扩展资源丰富，包括SCI(UART)、FSI、eCAN、eQEP 等
   - Haawking Link(TM)：昊芯自主研发的RISC-V DSP芯片的仿真器，支持芯片调试和片内Flash烧写，无需安装驱动
   - Haawking IDE(TM)：基于Eclipse；界面与友商保持一致；不改变用户使用习惯，自研专用编译器、调试器、仿真器（HX-LINK）；多样化FLASH下载工具
+
+**培训资料**：
+![HaawkFoC Projects and Labs User’s
+Guide For HXS320F280049C & HXS320F280025C](https://github.com/JunningWu/HaawkingFoC/blob/fa1aa607fcd8dbaa42228e9f00d4e4f0cd4e42e1/YuZhou1.0/docs/HaawkFoC%20Projects%20and%20Labs%20User%E2%80%99s%20Guide%20For%20HXS320F280049C.md)
+
+
 
 ## HaawkingSmartControl
 ### 电机控制例程开发测试
