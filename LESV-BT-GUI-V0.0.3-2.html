@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>昊芯LSEV调试终端</title>
+    <style>
+        :root { --primary: #007bff; --success: #28a745; --warning: #ff9800; --danger: #dc3545; --bg: #f8f9fa; --purple-bg: #f5f0f9; --purple-border: #e1d5eb; --gear-bg: #eef2f7; }
+        body { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); padding: 20px; color: #333; margin: 0; }
+        
+        .header-title { text-align: center; color: #003366; margin-bottom: 20px; font-size: 28px; font-weight: bold; padding: 10px; border-bottom: 2px solid #003366; }
+        .container { max-width: 1400px; margin: auto; display: flex; gap: 20px; }
+        .panel { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); flex: 2.5; }
+        .terminal { background: #000; color: #00ff00; border-radius: 8px; flex: 1.2; height: 950px; display: flex; flex-direction: column; font-family: monospace; overflow: hidden; border: 1px solid #333; }
+        
+        /* 按钮组布局 */
+        .conn-group { display: flex; gap: 10px; margin-bottom: 25px; }
+        .btn-conn { background: #007bff; color: white; flex: 3; padding: 12px; font-size: 18px; font-weight: bold; border-radius: 6px; border: none; cursor: pointer; transition: 0.2s; }
+        .btn-disconn { background: var(--danger); color: white; flex: 1; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 6px; border: none; cursor: pointer; opacity: 0.6; pointer-events: none; }
+        .btn-disconn.active { opacity: 1; pointer-events: auto; }
+        .btn-conn:hover { background: #0056b3; }
+
+        /* 档位指示样式 */
+        .gear-monitor { display: flex; gap: 30px; margin-bottom: 20px; padding: 15px; background: var(--gear-bg); border-radius: 10px; justify-content: center; border: 1px solid #d1d9e6; }
+        .gear-item { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: bold; color: #555; }
+        .gear-ind { width: 22px; height: 22px; border-radius: 4px; border: 2px solid #999; background: #fff; transition: all 0.3s; }
+        .active-fwd { background: var(--success) !important; border-color: #1e7e34 !important; box-shadow: 0 0 10px var(--success); color: #1e7e34; }
+        .active-rev { background: var(--danger) !important; border-color: #bd2130 !important; box-shadow: 0 0 10px var(--danger); color: #bd2130; }
+        .active-neu { background: var(--warning) !important; border-color: #d39e00 !important; box-shadow: 0 0 10px var(--warning); color: #d39e00; }
+        .gear-label-active { color: #000; }
+
+        .error-monitor { background: var(--purple-bg); border: 1px solid var(--purple-border); border-radius: 10px; padding: 15px; margin-bottom: 20px; }
+        .error-header { display: flex; align-items: center; gap: 10px; color: #8e44ad; font-weight: bold; margin-bottom: 15px; font-size: 16px; }
+        .error-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .error-item { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+        .indicator { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #52c41a; background: #fff; box-sizing: border-box; }
+        .indicator.fault { background: #ff4d4f !important; border-color: #cf1322 !important; box-shadow: 0 0 8px #ff4d4f; animation: blink 1s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        table { width: 100%; border-collapse: collapse; }
+        th { border-bottom: 1px solid #eee; padding: 12px; color: #666; font-size: 14px; text-align: center; }
+        td { padding: 15px 5px; border-bottom: 1px solid #f0f0f0; text-align: center; font-size: 14px; }
+        .param-name { text-align: left; font-weight: bold; padding-left: 20px; width: 180px; }
+        input { border: 1px solid #d9d9d9; border-radius: 4px; padding: 6px; text-align: center; font-size: 14px; }
+        .hex-input { width: 45px; background: #fff; }
+        .dec-input-long { width: 220px; border: 1.5px solid #003366; font-weight: bold; }
+        .dec-input-short { width: 100px; border: 1.5px solid #003366; font-weight: bold; }
+        .dec-input-tiny { width: 55px; border: 1px solid #d9d9d9; font-weight: normal; }
+        .reserve-input { width: 45px; background: #fffdf0; border-color: #f0e68c; }
+        .btn-read { color: #52c41a; border: 1px solid #52c41a; background: white; padding: 4px 12px; border-radius: 4px; cursor: pointer; }
+        .btn-write { color: #faad14; border: 1px solid #faad14; background: white; padding: 4px 12px; border-radius: 4px; cursor: pointer; }
+        .bottom-actions { display: flex; gap: 15px; margin-top: 30px; }
+        .btn-footer { flex: 1; padding: 15px; border-radius: 6px; color: white; font-weight: bold; font-size: 16px; border: none; cursor: pointer; }
+        .terminal-header { padding: 10px; border-bottom: 1px solid #333; font-size: 12px; color: #aaa; background: #222; display: flex; justify-content: space-between; align-items: center; }
+        .btn-clear { background: transparent; border: 1px solid #555; color: #ccc; cursor: pointer; font-size: 10px; border-radius: 3px; padding: 2px 8px; }
+        #log-box { flex: 1; overflow-y: auto; padding: 15px; font-size: 12px; line-height: 1.5; background: #000; }
+    </style>
+</head>
+<body>
+
+<div class="header-title">昊芯LSEV调试终端</div>
+
+<div class="container">
+    <div class="panel">
+        <div class="conn-group">
+            <button class="btn-conn" id="btn-conn" onclick="connectBT()">🌐 点击连接蓝牙设备</button>
+            <button class="btn-disconn" id="btn-disconn" onclick="disconnectBT()">断开</button>
+        </div>
+        
+        <div class="gear-monitor">
+            <div class="gear-item"><div id="gear-f" class="gear-ind"></div><span id="label-f">前进 (F)</span></div>
+            <div class="gear-item"><div id="gear-n" class="gear-ind active-neu"></div><span id="label-n" class="gear-label-active">空档 (N)</span></div>
+            <div class="gear-item"><div id="gear-r" class="gear-ind"></div><span id="label-r">后退 (R)</span></div>
+        </div>
+
+        <div class="error-monitor">
+            <div class="error-header">⚠️ 错误状态监控 (实时解析 ID 0x06)</div>
+            <div class="error-grid" id="fault-grid"></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th class="param-name">参数项 (ID)</th>
+                    <th>数值设定</th>
+                    <th>操作</th>
+                    <th style="width: 80px;">同步状态</th>
+                </tr>
+            </thead>
+            <tbody id="paramBody"></tbody>
+        </table>
+
+        <div class="bottom-actions">
+            <button class="btn-footer" style="background:var(--success)" onclick="batch(0x01)">批量读取</button>
+            <button class="btn-footer" style="background:var(--warning)" onclick="batch(0x81)">批量写入</button>
+            <button class="btn-footer" style="background:var(--danger)" onclick="saveEE()">💾 存EEPROM</button>
+        </div>
+    </div>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <span>📡 通信日志控制台</span>
+            <button class="btn-clear" onclick="clearLog()">清除日志</button>
+        </div>
+        <div id="log-box"></div>
+    </div>
+</div>
+
+<script>
+    let bluetoothDevice; // 新增：保存蓝牙设备对象
+    let charWrite, charNotify;
+    let receiveQueue = [];
+
+    const paramDefs = [
+        { id: 1, name: "速度环Kp", type: "hex" },
+        { id: 2, name: "峰值转速", type: "mixed" },
+        { id: 3, name: "电机温度", type: "dec" },
+        { id: 4, name: "电池电压", type: "dec" },
+        { id: 5, name: "档位信息", type: "hex" },
+        { id: 6, name: "故障代码", type: "hex" },
+        { id: 7, name: "预留", type: "reserve" },
+        { id: 8, name: "预留", type: "reserve" },
+        { id: 9, name: "预留", type: "reserve" },
+        { id: 10, name: "预留", type: "reserve" },
+        { id: 11, name: "相序编码器", type: "hex" },
+        { id: 12, name: "码表线数", type: "mixed" }
+    ];
+
+    const faultDefs = [
+        { code: 0x0001, label: "电机编码器故障" }, { code: 0x0002, label: "电机过温" },
+        { code: 0x0004, label: "控制器过温" }, { code: 0x0010, label: "高踏板禁止" },
+        { code: 0x0020, label: "点火故障" }, { code: 0x0040, label: "过流" },
+        { code: 0x0080, label: "控制器过热" }, { code: 0x0100, label: "电池欠压" },
+        { code: 0x0200, label: "电流检测故障" }, { code: 0x0400, label: "超速故障" },
+        { code: 0x0800, label: "锂电池BMS故障" }, { code: 0x1000, label: "电池欠压" },
+        { code: 0x2000, label: "电池过压" }, { code: 0x4000, label: "电机过热" },
+        { code: 0x8000, label: "加速器故障" }
+    ];
+
+    window.onload = () => {
+        const grid = document.getElementById('fault-grid');
+        faultDefs.forEach(f => {
+            grid.innerHTML += `<div class="error-item"><div class="indicator" id="ind-${f.code}"></div><span>${f.label}</span></div>`;
+        });
+
+        const tbody = document.getElementById('paramBody');
+        paramDefs.forEach(p => {
+            let inputHtml = "";
+            if (p.type === "hex") {
+                inputHtml = [0,1,2,3].map(j => `<input type="text" class="hex-input" id="val-${p.id}-${j}" value="00">`).join(' ');
+            } else if (p.type === "mixed") {
+                inputHtml = `
+                    <input type="number" class="dec-input-short" id="dec-${p.id}-combined" value="0">
+                    <input type="number" class="dec-input-tiny" id="val-${p.id}-2" min="0" max="255" value="0">
+                    <input type="number" class="dec-input-tiny" id="val-${p.id}-3" min="0" max="255" value="0">
+                `;
+            } else if (p.type === "dec") {
+                inputHtml = `<input type="number" class="dec-input-long" id="full-${p.id}" value="0">`;
+            } else {
+                inputHtml = [0,1,2,3].map(j => `<input type="number" class="reserve-input" id="val-${p.id}-${j}" value="0">`).join(' ');
+            }
+
+            tbody.innerHTML += `
+                <tr>
+                    <td class="param-name">${p.name} (0x${p.id.toString(16).toUpperCase().padStart(2,'0')})</td>
+                    <td><div style="display:flex; gap:8px; justify-content:center;">${inputHtml}</div></td>
+                    <td>
+                        <button class="btn-read" onclick="op(0x01, ${p.id})">读</button>
+                        <button class="btn-write" onclick="op(0x81, ${p.id})">写</button>
+                    </td>
+                    <td id="s-${p.id}" style="color:#bbb">-</td>
+                </tr>`;
+        });
+    };
+
+    async function connectBT() {
+        try {
+            bluetoothDevice = await navigator.bluetooth.requestDevice({ filters: [{ services: [0xFFF0] }] });
+            const server = await bluetoothDevice.gatt.connect();
+            const service = await server.getPrimaryService(0xFFF0);
+            charWrite = await service.getCharacteristic(0xFFF2);
+            charNotify = await service.getCharacteristic(0xFFF1);
+            await charNotify.startNotifications();
+            charNotify.addEventListener('characteristicvaluechanged', (e) => {
+                receiveQueue.push(...new Uint8Array(e.target.value.buffer));
+                analyze();
+            });
+            
+            // 更新UI
+            document.getElementById('btn-conn').innerText = "✅ 已连接: " + bluetoothDevice.name;
+            document.getElementById('btn-disconn').classList.add('active');
+            log('SYS', '设备已连接');
+        } catch (e) { log('SYS', '连接失败: ' + e.message); }
+    }
+
+    // 新增：断开连接函数
+    async function disconnectBT() {
+        if (bluetoothDevice && bluetoothDevice.gatt.connected) {
+            await bluetoothDevice.gatt.disconnect();
+            log('SYS', '用户手动断开连接');
+            
+            // 重置UI
+            document.getElementById('btn-conn').innerText = "🌐 点击连接蓝牙设备";
+            document.getElementById('btn-disconn').classList.remove('active');
+            charWrite = null;
+            charNotify = null;
+            
+            // 清除同步状态文字
+            paramDefs.forEach(p => {
+                document.getElementById(`s-${p.id}`).innerText = "-";
+            });
+        }
+    }
+
+    function analyze() {
+        while (receiveQueue.length >= 9) {
+            if (receiveQueue[0] === 0x77 && receiveQueue[1] === 0x77) {
+                parse(new Uint8Array(receiveQueue.splice(0, 9)));
+            } else { receiveQueue.shift(); }
+        }
+    }
+
+    function updateGearDisplay(d0) {
+        const isFwd = (d0 & 0x01);
+        const isRev = (d0 & 0x02);
+        const isNeu = !isFwd && !isRev;
+
+        document.getElementById('gear-f').className = 'gear-ind' + (isFwd ? ' active-fwd' : '');
+        document.getElementById('gear-r').className = 'gear-ind' + (isRev ? ' active-rev' : '');
+        document.getElementById('gear-n').className = 'gear-ind' + (isNeu ? ' active-neu' : '');
+
+        document.getElementById('label-f').className = isFwd ? 'gear-label-active' : '';
+        document.getElementById('label-r').className = isRev ? 'gear-label-active' : '';
+        document.getElementById('label-n').className = isNeu ? 'gear-label-active' : '';
+    }
+
+    function parse(data) {
+        log('RX', data);
+        const id = data[3];
+        const d = 4;
+        const p = paramDefs.find(x => x.id === id);
+        if (!p) return;
+
+        if (id === 5) updateGearDisplay(data[d]);
+
+        if (p.type === "dec") {
+            document.getElementById(`full-${id}`).value = (data[d] | (data[d+1] << 8) | (data[d+2] << 16) | (data[d+3] << 24)) >>> 0;
+        } else if (p.type === "mixed") {
+            document.getElementById(`dec-${id}-combined`).value = data[d] | (data[d+1] << 8);
+            document.getElementById(`val-${id}-2`).value = data[d+2];
+            document.getElementById(`val-${id}-3`).value = data[d+3];
+        } else {
+            for (let j = 0; j < 4; j++) {
+                const el = document.getElementById(`val-${id}-${j}`);
+                if (p.type === "reserve") el.value = data[d+j] * 2;
+                else el.value = data[d+j].toString(16).toUpperCase().padStart(2,'0');
+            }
+            if (id === 6) {
+                const code = (data[d+1] << 8) | data[d];
+                faultDefs.forEach(f => {
+                    const ind = document.getElementById(`ind-${f.code}`);
+                    if (ind) {
+                        if ((code & f.code) === f.code) ind.classList.add('fault');
+                        else ind.classList.remove('fault');
+                    }
+                });
+            }
+        }
+        document.getElementById(`s-${id}`).innerText = "已更新";
+    }
+
+    async function op(mode, id) {
+        if (!charWrite) return alert("请先连接蓝牙");
+        const p = paramDefs.find(x => x.id === id);
+        let buf = new Uint8Array(8);
+        buf[0] = 0x77; buf[1] = mode; buf[2] = id;
+
+        if (mode === 0x81) {
+            if (p.type === "dec") {
+                const v = parseInt(document.getElementById(`full-${id}`).value) || 0;
+                buf[3] = v & 0xFF; buf[4] = (v >> 8) & 0xFF; buf[5] = (v >> 16) & 0xFF; buf[6] = (v >> 24) & 0xFF;
+            } else if (p.type === "mixed") {
+                const v = parseInt(document.getElementById(`dec-${id}-combined`).value) || 0;
+                buf[3] = v & 0xFF; buf[4] = (v >> 8) & 0xFF;
+                buf[5] = parseInt(document.getElementById(`val-${id}-2`).value) || 0;
+                buf[6] = parseInt(document.getElementById(`val-${id}-3`).value) || 0;
+            } else {
+                for (let j = 0; j < 4; j++) {
+                    const el = document.getElementById(`val-${id}-${j}`);
+                    if (p.type === "reserve") buf[3+j] = (Math.floor(parseInt(el.value) / 2)) & 0xFF;
+                    else buf[3+j] = parseInt(el.value, 16) || 0;
+                }
+            }
+        }
+        let sum = 0; for(let k=0; k<7; k++) sum += buf[k]; buf[7] = sum & 0xFF;
+        await charWrite.writeValueWithoutResponse(buf);
+        log('TX', buf);
+        if (mode === 0x81) setTimeout(() => op(0x01, id), 500);
+    }
+
+    async function batch(m) {
+        for(let p of paramDefs) {
+            await op(m, p.id);
+            await new Promise(r => setTimeout(r, 450));
+        }
+    }
+
+    function saveEE() {
+        const b = new Uint8Array([0x77, 0x81, 0x0D, 0x00, 0x00, 0x00, 0x00, 0x05]);
+        if (charWrite) {
+            charWrite.writeValueWithoutResponse(b);
+            log('TX', b);
+        }
+    }
+
+    function clearLog() {
+        document.getElementById('log-box').innerHTML = "";
+    }
+
+    function log(type, data) {
+        let content = typeof data === 'string' ? data : Array.from(data).map(b => b.toString(16).toUpperCase().padStart(2, '0')).join(' ');
+        const box = document.getElementById('log-box');
+        box.innerHTML += `<div><span style="color:${type==='TX'?'#00ff00':(type==='RX'?'#00bfff':'#ffcc00')}">[${type}] ${content}</span></div>`;
+        box.scrollTop = box.scrollHeight;
+    }
+</script>
+</body>
+</html>
